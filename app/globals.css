@@ -4,25 +4,28 @@
 
 @layer base {
     :root {
-        --background: 240 10% 3.9%;
+        --background: 0 0% 1.6%;
+        /* #040404 */
         --foreground: 0 0% 98%;
 
-        --card: 240 10% 3.9%;
+        --card: 0 0% 1.6%;
         --card-foreground: 0 0% 98%;
 
-        --popover: 240 10% 3.9%;
+        --popover: 0 0% 1.6%;
         --popover-foreground: 0 0% 98%;
 
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
+        --primary: 268 71% 57%;
+        /* #8d45df (Purple) */
+        --primary-foreground: 0 0% 98%;
 
-        --secondary: 240 3.7% 15.9%;
+        --secondary: 221 100% 31%;
+        /* #0033A0 (Blue) */
         --secondary-foreground: 0 0% 98%;
 
         --muted: 240 3.7% 15.9%;
         --muted-foreground: 240 5% 64.9%;
 
-        --accent: 240 3.7% 15.9%;
+        --accent: 268 71% 57%;
         --accent-foreground: 0 0% 98%;
 
         --destructive: 0 62.8% 30.6%;
@@ -30,7 +33,9 @@
 
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
+        --ring: 268 71% 57%;
+
+        --radius: 0.5rem;
     }
 }
 
@@ -41,5 +46,10 @@
 
     body {
         @apply bg-background text-foreground;
+        background-color: #040404;
+        background-image:
+            radial-gradient(circle at 15% 50%, rgba(141, 69, 223, 0.15), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(0, 51, 160, 0.15), transparent 25%);
+        background-attachment: fixed;
     }
 }

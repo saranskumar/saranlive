@@ -5,7 +5,7 @@ import { ContactSection } from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground animate-fade-in">
+    <main className="min-h-screen bg-background text-foreground animate-in fade-in duration-500">
       {/* 1. Hero: Name, Role, CTA */}
       <HeroSection />
 

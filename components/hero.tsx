@@ -1,45 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { PROFILE } from "@/lib/data";
+import { ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
 
 export function HeroSection() {
     return (
-        <section className="py-32 md:py-48 container max-w-4xl mx-auto px-6">
-            <div className="space-y-8 animate-fade-in delay-100">
-                {/* Name & Role */}
-                <div className="space-y-4">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-                        Saran S Kumar
-                    </h1>
-                    <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                        AI • Software • Systems
-                    </p>
-                </div>
+        <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-transparent relative overflow-hidden">
+            <div className="space-y-6 animate-in fade-in zoom-in duration-1000 z-10 relative">
+                {/* Branding */}
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+                    <span className="text-foreground">Saran</span>
+                </h1>
 
-                {/* Positioning Statement */}
-                <p className="max-w-xl text-lg text-zinc-500 leading-relaxed">
-                    Building useful technology and learning in public. <br />
-                    Designing clean, intelligent systems that solve real problems.
-                </p>
+                {/* Subtitle */}
+                <h2 className="text-2xl md:text-3xl font-light text-muted-foreground">
+                    Product Engineer & <span className="text-foreground border-b-2 border-secondary pb-1">Creative Technologist</span>
+                </h2>
 
-                {/* CTAs */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                    <Link
-                        href="/projects"
-                        className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-8"
-                    >
-                        View Projects
-                    </Link>
-                    <Link
-                        href="/hire-me"
-                        className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-8"
-                    >
-                        Hire Me
-                    </Link>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4 mt-8">
+                    <SocialLink href={PROFILE.links.instagram} icon={Instagram} />
+                    <SocialLink href={PROFILE.links.github} icon={Github} />
+                    <SocialLink href={PROFILE.links.discord} icon={ArrowRight} />
+                    <SocialLink href={PROFILE.links.linkedin} icon={Linkedin} />
                 </div>
             </div>
         </section>
     );
+}
+
+function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white transition-colors hover:text-black"
+        >
+            <Icon className="w-5 h-5" />
+        </a>
+    )
 }
 

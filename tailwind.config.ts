@@ -11,7 +11,8 @@ const config: Config = {
         extend: {
             fontFamily: {
                 sans: ['var(--font-sans)'],
-                mono: ['var(--font-mono)']
+                mono: ['var(--font-mono)'],
+                heading: ['var(--font-heading)'], // Add heading font
             },
             colors: {
                 background: 'hsl(var(--background))',

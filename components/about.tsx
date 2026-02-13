@@ -2,7 +2,7 @@ import { JOURNEY, POSITIONS, PROFILE } from "@/lib/data";
 
 export function AboutSection() {
     return (
-        <section className="py-20 md:py-32 bg-zinc-50 dark:bg-zinc-900/50">
+        <section className="py-20 md:py-32 bg-transparent">
             <div className="container max-w-4xl mx-auto px-6 space-y-24">
 
                 {/* 1. Bio & Image */}
