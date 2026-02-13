@@ -1,4 +1,3 @@
-"use client";
 
 import { PROFILE } from "@/lib/data";
 import { ArrowDown, Mail, Github, Linkedin, Calendar } from "lucide-react";

@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-// @ts-expect-error
 import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
