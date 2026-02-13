@@ -5,12 +5,23 @@ export function AboutSection() {
         <section className="py-20 md:py-32 bg-zinc-50 dark:bg-zinc-900/50">
             <div className="container max-w-4xl mx-auto px-6 space-y-24">
 
-                {/* 1. Bio */}
-                <div className="space-y-6">
-                    <h2 className="text-2xl font-bold tracking-tight">About</h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                        {PROFILE.bio}
-                    </p>
+                {/* 1. Bio & Image */}
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12 items-start">
+                    <div className="space-y-6 order-2 md:order-1">
+                        <h2 className="text-2xl font-bold tracking-tight">About</h2>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            {PROFILE.bio}
+                        </p>
+                    </div>
+                    <div className="order-1 md:order-2 flex justify-center md:justify-end">
+                        <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border border-border bg-muted shadow-sm rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <img
+                                src="/saran.png"
+                                alt="Saran S Kumar"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* 2. Journey (Experience/Education) */}

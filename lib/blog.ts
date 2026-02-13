@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+// @ts-expect-error
 import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
@@ -31,7 +32,7 @@ export function getAllPosts(): BlogPost[] {
             date: data.date,
             excerpt: data.excerpt,
             content,
-            readingTime: "5 min read", // Placeholder logic
+            readingTime: `${Math.ceil(content.split(/\s+/).length / 200)} min read`,
         };
     });
 
@@ -53,6 +54,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
         date: data.date,
         excerpt: data.excerpt,
         content,
-        readingTime: "5 min read",
+        readingTime: `${Math.ceil(content.split(/\s+/).length / 200)} min read`,
     };
 }

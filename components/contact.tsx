@@ -15,7 +15,7 @@ export function ContactSection() {
                     </h2>
 
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        I&apos;m currently open to new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

@@ -1,5 +1,5 @@
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXContent } from "@/components/mdx-content";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -38,9 +38,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     </div>
                 </header>
 
-                <article className="prose prose-neutral dark:prose-invert max-w-none prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-electric-blue prose-a:no-underline hover:prose-a:underline">
-                    <MDXRemote source={post.content} />
-                </article>
+                <div className="prose prose-zinc dark:prose-invert max-w-none">
+                    <MDXContent source={post.content} />
+                </div>
             </div>
         </main>
     );
