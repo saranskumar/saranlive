@@ -11,14 +11,6 @@ const FEATURED_SYSTEMS = [
         stack: ["Arduino", "C++", "Ultrasonic", "IR Sensors"],
     },
     {
-        slug: "event-management",
-        title: "IEEE Event System",
-        category: "Full-Stack · Systems",
-        description:
-            "End-to-end registration, QR check-in, and real-time analytics platform managing 500+ attendees for IEEE Travancore Hub Meet 2025.",
-        stack: ["Next.js", "Firebase", "QR Engine", "Tailwind"],
-    },
-    {
         slug: "iot-monitor",
         title: "IoT Environmental Monitor",
         category: "IoT · Cloud",

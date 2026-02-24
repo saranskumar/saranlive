@@ -1,42 +1,21 @@
 const POSITIONS = [
     {
-        role: "Joint Secretary",
-        org: "IEEE Travancore Subsection",
-        period: "2024–Present",
+        role: "AI SIG Coordinator",
+        org: "IEEE SCT SB",
+        period: "2025–26",
         impact: [
-            "Coordinated events with 500+ attendees",
-            "Led technical workshops and speaker sessions",
-            "Built internal tooling for event registration",
+            "Coordinating AI/ML study groups and technical sessions",
+            "Mentoring students on applied machine learning projects",
+            "Building a focused AI learning community on campus",
         ],
     },
     {
-        role: "Chairperson",
-        org: "IEEE CS SCT College Chapter",
-        period: "2024–Present",
+        role: "Campus Ambassador — Xtreme 19.0",
+        org: "IEEE Volunteer, IEEE SCT SB",
+        period: "2025",
         impact: [
-            "Led a 20+ member technical team",
-            "Organised AIROB 2025 robotics competition",
-            "Drove student technical project initiatives",
-        ],
-    },
-    {
-        role: "Lead Organiser",
-        org: "AIROB 2025 — All Kerala Robotics",
-        period: "Feb 2025",
-        impact: [
-            "First-place winning team",
-            "Designed autonomous robot from scratch",
-            "Competed under strict time + budget constraints",
-        ],
-    },
-    {
-        role: "Full-Stack Lead",
-        org: "IEEE THM 2025 Event System",
-        period: "Jan 2025",
-        impact: [
-            "Built end-to-end registration + QR check-in",
-            "Zero data-loss incidents at event",
-            "Sub-2s check-in time across all gates",
+            "Official ambassador for IEEE Xtreme 19.0 global programming contest",
+            "Coordinating participation and logistics for campus teams",
         ],
     },
 ];

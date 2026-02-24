@@ -15,7 +15,7 @@ export const PROFILE = {
     skills: [
         "Python", "C", "Java", "JavaScript",
         "React", "Next.js", "Tailwind",
-        "Spring Boot", "MySQL", "Firebase",
+        "Spring Boot", "MySQL",
         "Arduino", "ESP32", "Raspberry Pi",
         "AI/ML Systems"
     ]
@@ -32,15 +32,6 @@ export const PROJECTS = [
         tech: ["Arduino", "C++", "Sensors", "Motor Control"],
         link: "/projects/airob-2025",
         color: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-        id: "02",
-        title: "Event Management System",
-        category: "Full Stack",
-        description: "Comprehensive ticketing and QR verification system built for IEEE Travancore Hub Meet 2025. Handled registration and real-time check-ins.",
-        tech: ["React", "Firebase", "QR Code", "Tailwind"],
-        link: "/projects/event-system",
-        color: "from-orange-500/20 to-red-500/20",
     },
     {
         id: "03",

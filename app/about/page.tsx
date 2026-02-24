@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const SKILLS = {
     frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    backend: ["Node.js", "Python", "Spring Boot", "MySQL", "Firebase"],
+    backend: ["Node.js", "Python", "Spring Boot", "MySQL"],
     hardware: ["Arduino", "ESP32", "Raspberry Pi", "LoRa", "C/C++"],
     tools: ["Git", "Linux", "Figma", "Postman", "VS Code"],
 };
@@ -26,7 +26,7 @@ const FOCUS_AREAS = [
     {
         title: "Full-Stack Engineering",
         description:
-            "Static-first, edge-deployed web apps with Next.js, TypeScript, and Firebase. Shipping production software, not demos.",
+            "Static-first, edge-deployed web apps with Next.js and TypeScript. Shipping production software, not demos.",
     },
     {
         title: "Robotics",

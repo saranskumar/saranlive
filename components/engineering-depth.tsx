@@ -17,7 +17,7 @@ const DEPTH_AREAS = [
         skills: [
             "Next.js, React, TypeScript",
             "Spring Boot, Node.js, Python",
-            "Firebase, MySQL, REST APIs",
+            "MySQL, REST APIs",
             "Static-first, edge-deployed",
         ],
     },
@@ -25,7 +25,7 @@ const DEPTH_AREAS = [
         icon: Users,
         title: "Leadership & Execution",
         skills: [
-            "IEEE Travancore Hub Coordinator",
+            "AI SIG Coordinator, IEEE SCT SB",
             "Event systems for 500+ attendees",
             "Cross-functional team leadership",
             "Hackathon organiser & winner",
