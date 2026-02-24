@@ -1,68 +1,90 @@
-import { Metadata } from "next";
+import profileData from "@/data/profile.json";
+import { Github, Linkedin, Mail, Download, Globe, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
-export const metadata: Metadata = {
-    title: "Saran S Kumar | Profile",
-    description: "Digital business card and quick links.",
+const ICON_MAP: Record<string, React.ElementType> = {
+    github: Github,
+    linkedin: Linkedin,
+    whatsapp: MessageCircle,
+    mail: Mail,
+    download: Download,
+    globe: Globe,
 };
 
 export default function ProfilePage() {
+    const profile = profileData;
+
     return (
-        <main className="min-h-screen bg-background flex items-center justify-center p-6 relative overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-[-20%] right-[-20%] w-[80vw] h-[80vw] bg-electric-blue/5 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[-20%] left-[-20%] w-[80vw] h-[80vw] bg-soft-violet/5 rounded-full blur-[100px]" />
+        <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4 py-10 sm:py-16 relative">
+
+        
+
+            <div className="w-full max-w-xs sm:max-w-sm space-y-8">
+
+                {/* Identity */}
+                <div className="flex flex-col items-center text-center space-y-4">
+                    {/* Avatar monogram */}
+                    <div className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center">
+                        <span className="text-2xl font-bold text-primary font-mono select-none">SK</span>
+                    </div>
+                    <div className="space-y-1">
+                        <h1 className="text-xl font-bold tracking-tight">{profile.name}</h1>
+                        <p className="text-sm text-muted-foreground">{profile.role}</p>
+                        <p className="text-xs text-muted-foreground/70">{profile.location}</p>
+                    </div>
+                    {/* Headline tags */}
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {profile.headline.split(" · ").map((item) => (
+                            <span
+                                key={item}
+                                className="text-xs font-mono px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
+                            >
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Quick links — tap-friendly 52px min height */}
+                <div className="grid grid-cols-2 gap-3">
+                    {profile.quickLinks.map((link) => {
+                        const Icon = ICON_MAP[link.icon] ?? Globe;
+                        const isDownload = link.icon === "download";
+                        return (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download={isDownload || undefined}
+                                className="flex items-center gap-3 px-4 py-3.5 min-h-[52px] rounded-lg border border-border bg-card hover:border-primary/40 hover:bg-primary/5 active:scale-[0.97] transition-all group"
+                            >
+                                <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                                <span className="text-sm font-medium text-foreground">{link.label}</span>
+                            </a>
+                        );
+                    })}
+                </div>
+
+                {/* Footer nav */}
+                <div className="flex items-center justify-center gap-6 pt-4 border-t border-border">
+                    <Link href="/systems" className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1">
+                        Systems
+                    </Link>
+                    <Link href="/mindlab" className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1">
+                        MindLab
+                    </Link>
+                    <Link href="/" className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1">
+                        Home
+                    </Link>
+                </div>
+
+                <p className="text-center text-xs text-muted-foreground/40 font-mono">
+                    saranskumar.live
+                </p>
             </div>
-
-            <div className="relative z-10 w-full max-w-sm bg-background border border-border rounded-3xl p-8 shadow-2xl text-center space-y-6">
-
-                {/* Profile Image */}
-                <div className="mx-auto w-32 h-32 rounded-full overflow-hidden border-4 border-background shadow-lg">
-                    <img
-                        src="/saran.png"
-                        alt="Saran S Kumar"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-
-                {/* Info */}
-                <div className="space-y-2">
-                    <h1 className="text-2xl font-bold tracking-tight">Saran S Kumar</h1>
-                    <p className="text-sm text-muted-foreground font-medium">AI • Software • Systems</p>
-                </div>
-
-                {/* Links */}
-                <div className="space-y-3 pt-2">
-                    <a
-                        href="https://github.com/saranlive"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full py-2.5 rounded-xl bg-secondary/50 hover:bg-secondary text-sm font-medium transition-colors"
-                    >
-                        GitHub
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/saranlive"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full py-2.5 rounded-xl bg-secondary/50 hover:bg-secondary text-sm font-medium transition-colors"
-                    >
-                        LinkedIn
-                    </a>
-                    <a
-                        href="mailto:saran.kumar@example.com"
-                        className="block w-full py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium transition-colors"
-                    >
-                        Email Me
-                    </a>
-                </div>
-
-                <div className="pt-4 border-t border-border">
-                    <p className="text-xs text-muted-foreground">
-                        Save to contacts or scan NFC
-                    </p>
-                </div>
-
-            </div>
-        </main>
+        </div>
     );
 }

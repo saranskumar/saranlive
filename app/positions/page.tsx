@@ -1,8 +1,9 @@
-import { POSITIONS } from "@/lib/data";
+import { getAllPositionsSorted } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function PositionsPage() {
+    const positions = getAllPositionsSorted();
     return (
         <main className="min-h-screen bg-background relative overflow-hidden pt-32 pb-20">
             <div className="container mx-auto px-6 max-w-5xl">
@@ -14,7 +15,7 @@ export default function PositionsPage() {
                 </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {POSITIONS.map((pos, index) => (
+                    {positions.map((pos, index) => (
                         <div
                             key={index}
                             className="group p-8 rounded-3xl bg-secondary/20 border border-white/5 hover:bg-secondary/40 transition-all duration-300"

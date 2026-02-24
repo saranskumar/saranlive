@@ -1,9 +1,15 @@
-import { JOURNEY, POSITIONS, PROFILE } from "@/lib/data";
+import { PROFILE } from "@/lib/data";
+import { JourneyItem, PositionItem } from "@/lib/content";
 
-export function AboutSection() {
+interface AboutSectionProps {
+    journey: JourneyItem[];
+    positions: PositionItem[];
+}
+
+export function AboutSection({ journey, positions }: AboutSectionProps) {
     return (
-        <section className="py-20 md:py-32 bg-transparent">
-            <div className="container max-w-4xl mx-auto px-6 space-y-24">
+        <section className="py-24 md:py-40 bg-black/30 backdrop-blur-sm">
+            <div className="container max-w-4xl mx-auto px-6 space-y-28">
 
                 {/* 1. Bio & Image */}
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12 items-start">
@@ -28,14 +34,14 @@ export function AboutSection() {
                 <div className="space-y-8">
                     <h2 className="text-2xl font-bold tracking-tight">Journey</h2>
                     <div className="border-l border-border ml-2 space-y-12">
-                        {JOURNEY.map((item, index) => (
+                        {journey.map((item, index) => (
                             <div key={index} className="relative pl-8">
                                 {/* Dot */}
                                 <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-border" />
 
                                 <div className="space-y-2">
                                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                                        <span className="text-sm font-mono text-muted-foreground">{item.year}</span>
+                                        <span className="text-sm font-mono text-muted-foreground">{item.period}</span>
                                         <h3 className="font-semibold text-foreground">{item.title}</h3>
                                     </div>
                                     <p className="text-sm font-medium text-foreground/80">{item.organization}</p>
@@ -52,7 +58,7 @@ export function AboutSection() {
                 <div className="space-y-8">
                     <h2 className="text-2xl font-bold tracking-tight">Leadership & Community</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {POSITIONS.map((pos, index) => (
+                        {positions.map((pos, index) => (
                             <div key={index} className="p-6 rounded-lg border border-border bg-background hover:border-primary/50 transition-colors">
                                 <div className="flex justify-between items-start mb-4">
                                     <div>

@@ -1,23 +1,36 @@
-import { HeroSection } from "@/components/hero";
-import { AboutSection } from "@/components/about";
-import { ProjectsSection } from "@/components/projects";
-import { ContactSection } from "@/components/contact";
+import {
+  HeroSection
+} from "@/components/hero";
+import { SystemsPreview } from "@/components/systems-preview";
+import { EngineeringDepth } from "@/components/engineering-depth";
+import { LeadershipExecution } from "@/components/leadership-execution";
+import { ProofLayer } from "@/components/proof-layer";
+import { MindLabCTA } from "@/components/mindlab-cta";
+import { ContactCTA } from "@/components/contact-cta";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground animate-in fade-in duration-500">
-      {/* 1. Hero: Name, Role, CTA */}
+    <main className="min-h-screen bg-background text-foreground">
+      {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. About: Bio, Journey, Positions (Combined) */}
-      <AboutSection />
+      {/* 2. Systems Preview */}
+      <SystemsPreview />
 
-      {/* 3. Projects: Preview Grid */}
-      <ProjectsSection />
+      {/* 3. Engineering Depth */}
+      <EngineeringDepth />
 
-      {/* 4. Contact / Footer Area */}
-      {/* Footer is usually in layout, but Contact CTA can be here */}
-      <ContactSection />
+      {/* 4. Leadership & Execution */}
+      <LeadershipExecution />
+
+      {/* 5. Proof Strip */}
+      <ProofLayer />
+
+      {/* 6. MindLab Entry */}
+      <MindLabCTA />
+
+      {/* 7. Contact CTA */}
+      <ContactCTA />
     </main>
   );
 }

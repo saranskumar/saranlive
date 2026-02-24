@@ -1,0 +1,43 @@
+---
+title: "Embedded vs Web: A Bridge Builder's Take"
+date: "2025-01-28"
+excerpt: "What firmware engineers and web developers can learn from each other — and why the gap is smaller than you think."
+category: "Engineering Logs"
+tags: ["embedded", "web", "full-stack", "perspective"]
+---
+
+I write C++ for microcontrollers and TypeScript for web apps. Both in the same week, sometimes the same day. Most people treat this as a contradiction. I've started treating it as an advantage.
+
+Here's what working across both stacks has taught me.
+
+## The obvious differences
+
+**Resources:** An ESP32 has 520KB of SRAM. A web server can scale to 32GB. Resource constraints force embedded engineers to think in bytes and microseconds. Web engineers can often throw more compute at a problem.
+
+**Failure modes:** An embedded bug can brick a device or cause physical damage. A web bug produces a 500 error. The stakes change how you think about correctness.
+
+**Iteration speed:** A web dev `cmd+R` refreshes in milliseconds. Flashing new firmware to hardware takes 10-30 seconds, plus physical reset. You learn to think harder before you try.
+
+## What web engineers can learn from firmware
+
+**Respect for state.** Embedded code runs forever without a restart. State corruption — a variable that silently drifts, a buffer that overflows — accumulates. Firmware engineers are paranoid about state. Web engineers often aren't, because the server restarts fix most sins.
+
+**Determinism.** Non-deterministic behavior in embedded systems means real-world unpredictability — a robot that *sometimes* doesn't stop. Web engineers tolerate more non-determinism (eventual consistency, async races) than they should.
+
+**Memory discipline.** Avoiding heap fragmentation in C++ teaches you what garbage collection hides. Understanding the hidden cost of `new` and `delete` makes you write better code even in managed languages.
+
+## What embedded engineers can learn from web
+
+**Abstraction is power.** The firmware world resists abstraction — "it adds overhead." But good abstraction is the reason web engineers ship faster. A well-designed interface beats a clever optimization most of the time.
+
+**UX is the system.** Embedded systems often stop at "it works." Web forces you to consider the human on the other side. That discipline — asking "what does this feel like to use?" — makes better hardware products too.
+
+**Iteration tooling matters.** Hot reload, type checking, linting, CI pipelines. Web tooling is leagues ahead. Embedded engineers who adopt even 30% of this tooling ship more reliable firmware.
+
+## The bridge
+
+The most useful skill I've developed is reading a system *across* the abstraction stack. When the web app fails because the IoT device sent malformed JSON, I can trace the bug from the cloud log to the firmware loop to the sensor read. That full-stack view — from electron to endpoint — is rare and valuable.
+
+The gap between embedded and web is smaller than it looks. Both are systems of state, input, output, and failure. The substrate differs. The thinking doesn't.
+
+Build across both if you can. You'll be a better engineer on each side.

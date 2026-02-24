@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -21,8 +22,29 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Saran | Product Engineer & Builder",
-  description: "Senior Product Engineer & Creative Technologist. Building calm, serious software systems.",
+  title: {
+    default: "Saran S Kumar — Engineer",
+    template: "%s | Saran S Kumar",
+  },
+  description:
+    "CS (AI & ML) student and builder of real-world systems. Embedded systems, full-stack engineering, robotics, and AI exploration. Based in Trivandrum, Kerala.",
+  keywords: [
+    "Saran S Kumar",
+    "embedded systems",
+    "full-stack engineer",
+    "robotics",
+    "IoT",
+    "Next.js",
+    "Kerala engineer",
+  ],
+  authors: [{ name: "Saran S Kumar" }],
+  openGraph: {
+    title: "Saran S Kumar — Engineer",
+    description: "Builder of real-world systems across embedded, full-stack, robotics, and AI.",
+    siteName: "saranskumar.live",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -33,11 +55,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${poppins.variable} antialiased bg-zinc-950 text-foreground selection:bg-electric-blue/30`}
+        className={`${inter.variable} ${jetbrainsMono.variable} ${poppins.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

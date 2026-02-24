@@ -1,0 +1,61 @@
+---
+title: "IoT Environmental Monitor"
+category: "IoT · Cloud"
+description: "Distributed environmental sensor network using ESP32 + LoRa for long-range, low-power data collection with cloud dashboard integration."
+stack: ["ESP32", "LoRa SX1278", "C++", "MQTT", "Google Cloud IoT"]
+outcome: "Stable 24/7 data collection across 3 nodes at 1km range with under 5% packet loss."
+period: "Oct 2024 – Nov 2024"
+tags: ["iot", "embedded", "esp32", "lora", "cloud"]
+---
+
+## Problem
+
+Campus energy and environmental data (temperature, humidity, CO2, light levels) was fragmented — individual sensors with no aggregation or trend visibility. Goal: build a multi-node wireless sensor network with centralized cloud storage and visualization, without laying any new infrastructure.
+
+## Architecture
+
+Three edge nodes send readings to a central gateway over LoRa (~1km range, no WiFi required). The gateway relays to cloud via MQTT over existing campus WiFi.
+
+```
+Sensor Node (ESP32 + Sensors)
+  → LoRa 433MHz
+Gateway Node (ESP32 + LoRa + WiFi)
+  → MQTT over TLS
+Cloud Broker (Google Cloud IoT Core)
+  → BigQuery + Looker Studio Dashboard
+```
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Edge MCU | ESP32-WROOM-32 |
+| Radio | LoRa SX1278 (433MHz) |
+| Sensors | DHT22, MQ-135, BH1750 |
+| Firmware | C++ (Arduino framework) |
+| Protocol | LoRa point-to-point then MQTT |
+| Cloud | Google Cloud IoT Core + BigQuery |
+| Dashboard | Looker Studio |
+
+## Implementation
+
+Each sensor node woke from deep sleep every 5 minutes, read all sensors, packaged a compact JSON payload, transmitted over LoRa, then returned to deep sleep. Power draw was ~18mA average, giving ~72 hours on a 2600mAh 18650 cell.
+
+The gateway kept a sliding window of the last 10 packets per node; if a node missed 3 consecutive windows, it flagged an alert via a MQTT retained message.
+
+LoRa spreading factor was tuned to SF9 (balance of range vs. airtime) after field testing showed SF7 had 30% packet loss at 800m.
+
+Sensors communicated over I2C and single-wire digital protocols to the ESP32.
+
+## Outcome
+
+- **3 nodes** operating 24/7 at up to ~1km range
+- **Under 5% packet loss** after spreading factor tuning
+- **72-hour node battery life** on deep-sleep optimisation
+- Real-time dashboard showing 30-day environmental trends
+
+## Lessons Learned
+
+- **LoRa duty cycle limits** must be calculated explicitly — spreading factor and payload size both affect airtime.
+- **Deep sleep + LoRa wake** is non-trivial: SPI state must be re-initialised after wake, not assumed to persist.
+- Cloud IoT Core is being deprecated — future iteration will use EMQX or HiveMQ for the broker.

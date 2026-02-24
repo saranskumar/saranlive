@@ -1,0 +1,49 @@
+---
+title: "Systems Thinking for Engineers"
+date: "2025-02-10"
+excerpt: "How thinking in systems — not components — changed the way I approach every build."
+category: "Systems Thinking"
+tags: ["systems", "engineering-mindset", "architecture"]
+---
+
+There's a moment in every project where you realize you've been optimizing the wrong thing. For me, that moment happened midway through the AIROB robotics build, when the robot started behaving unpredictably despite every individual component testing fine in isolation.
+
+The sensors were fine. The motor driver was fine. The FSM logic was fine. But together — chaotic.
+
+That's when systems thinking clicked.
+
+## Components don't misbehave. Interactions do.
+
+The failure wasn't in any sensor. It was in the **timing relationship** between the sensor read loop and the FSM transition logic. The sensor ran on a 50ms poll. The FSM checked state every 10ms. A 5× mismatch that produced ghost readings at the transition boundary.
+
+Once I understood **the interface** rather than the component, the fix was obvious: synchronize the poll to the FSM cycle, not the other way around.
+
+## The four principles I use
+
+**1. Know your system boundary.**
+What's inside the system? What's outside? Sensors are inside. The arena is outside. Weather (ambient IR noise) is outside but bleeds in. Defining the boundary tells you where your control ends.
+
+**2. Emergence is real.**
+A robot is not the sum of its sensors, motors, and code. It's the behavior that *emerges* when those parts interact under physical constraints. Design for the emergent behavior, not just the component spec.
+
+**3. Feedback loops are the invisible architecture.**
+Every working system has feedback. The robot checks the sensor (feedback), adjusts motor speed (output), checks again (feedback). Fail to close the loop and you have open-loop control — which only works if your model of the world is perfect. It never is.
+
+**4. Stocks and flows.**
+What are the "stores" of state in your system? Battery charge, checkedIn flags in Firestore, packets in a LoRa buffer — all are stocks. Code that doesn't account for stock depletion or overflow eventually fails under production load.
+
+## Applied to software
+
+The same principles apply to web systems. In the IEEE Event System, the "interaction failure" was between Firestore's eventual consistency and the gate scanner's assumption of immediate consistency. Two components, individually correct, producing a race condition at the interface.
+
+Understanding the system — not just the service — is what lets you design for reliability.
+
+## The mindset shift
+
+The shift from *component thinking* to *systems thinking* is subtle but profound. It means:
+
+- Reading code for **interfaces**, not implementations
+- Designing for **behavior under load**, not ideal-case flow
+- Asking "what does this produce?" before "how does this work?"
+
+Most bugs live at the boundaries. Most poor architectures fail under interaction, not isolation. Systems thinking is just the mental model that puts you at the boundary, where the real engineering happens.

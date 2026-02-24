@@ -1,45 +1,55 @@
 "use client";
 
 import Link from "next/link";
-import { PROFILE } from "@/lib/data";
-import { ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 export function HeroSection() {
     return (
-        <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-transparent relative overflow-hidden">
-            <div className="space-y-6 animate-in fade-in zoom-in duration-1000 z-10 relative">
-                {/* Branding */}
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    <span className="text-foreground">Saran</span>
+        <section className="min-h-screen flex flex-col justify-center px-6 py-24 relative overflow-hidden">
+            {/* Subtle dot grid — no gradient */}
+            <div
+                className="pointer-events-none absolute inset-0 opacity-[0.06]"
+                style={{
+                    backgroundImage:
+                        "radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)",
+                    backgroundSize: "32px 32px",
+                }}
+            />
+
+            <div className="mx-auto max-w-[1200px] w-full relative">
+                <p className="mono-label mb-8">saran s kumar</p>
+
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.02] mb-8">
+                    I build
+                    <br />
+                    <span className="text-primary">systems.</span>
                 </h1>
 
-                {/* Subtitle */}
-                <h2 className="text-2xl md:text-3xl font-light text-muted-foreground">
-                    Product Engineer & <span className="text-foreground border-b-2 border-secondary pb-1">Creative Technologist</span>
-                </h2>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-3">
+                    Embedded hardware, full-stack engineering, robotics, and AI —
+                    built from first principles.
+                </p>
+                <p className="text-sm text-muted-foreground/60 mb-12 font-mono">
+                    CS (AI &amp; ML) at SCT Engineering · IEEE Coordinator · Trivandrum
+                </p>
 
-                {/* Social Links */}
-                <div className="flex justify-center gap-4 mt-8">
-                    <SocialLink href={PROFILE.links.instagram} icon={Instagram} />
-                    <SocialLink href={PROFILE.links.github} icon={Github} />
-                    <SocialLink href={PROFILE.links.discord} icon={ArrowRight} />
-                    <SocialLink href={PROFILE.links.linkedin} icon={Linkedin} />
+                <div className="flex flex-col sm:flex-row items-start gap-3">
+                    <Link
+                        href="/systems"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded border border-primary/50 bg-primary/10 text-sm font-medium text-foreground hover:bg-primary/20 transition-colors"
+                    >
+                        View Systems
+                        <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                    <Link
+                        href="/mindlab"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
+                    >
+                        Read MindLab
+                        <ExternalLink className="w-3.5 h-3.5" />
+                    </Link>
                 </div>
             </div>
         </section>
     );
 }
-
-function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
-    return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white transition-colors hover:text-black"
-        >
-            <Icon className="w-5 h-5" />
-        </a>
-    )
-}
-

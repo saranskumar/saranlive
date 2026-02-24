@@ -1,7 +1,7 @@
 export const PROFILE = {
     name: "Saran S Kumar",
     role: "Product Engineer & Builder",
-    headline: "Computer Science (AI & ML) Student | IEEE Coordinator",
+    headline: "Computer Science (AI & ML) Student | IEEE Volunteer",
     location: "Trivandrum, Kerala, India",
     bio: "Hands-on builder across software, AI, and robotics. Focused on creating calm, intelligent systems that solve real problems.",
     email: "saranskumarwh@gmail.com",
@@ -21,74 +21,7 @@ export const PROFILE = {
     ]
 };
 
-export const JOURNEY = [
-    {
-        year: "2024 – Present",
-        title: "B.Tech in Computer Science (AI & ML)",
-        organization: "Sree Chitra Thirunal College of Engineering",
-        description: "Focusing on Artificial Intelligence, Machine Learning, and Systems Engineering.",
-        type: "Education"
-    },
-    {
-        year: "2025",
-        title: "AI SIG Coordinator",
-        organization: "IEEE SCT SB",
-        description: "Leading technical community initiatives, coordinating AI learning events, and fostering student engagement.",
-        type: "Leadership"
-    },
-    {
-        year: "2025",
-        title: "Student Branch Ambassador",
-        organization: "IEEEXtreme",
-        description: "Representing the student branch in the global coding competition and promoting participation.",
-        type: "Leadership"
-    },
-    {
-        year: "2025",
-        title: "Hackathon Winner (AIROB)",
-        organization: "AIROB 2025",
-        description: "Built a robotics system under pressure, debugging circuits and code in a high-stakes environment.",
-        type: "Achievement"
-    },
-    {
-        year: "2022 – Present",
-        title: "Troop Leader",
-        organization: "Bharat Scouts & Guides",
-        description: "Developing leadership, discipline, and social service commitment.",
-        type: "Volunteering"
-    },
-    {
-        year: "2022 – 2024",
-        title: "Higher Secondary (Science)",
-        organization: "DVMNMMHSS Maranalloor",
-        description: "Graduated with 95%. Active in Science Club and Scouts.",
-        type: "Education"
-    }
-];
-
-export const POSITIONS = [
-    {
-        role: "AI SIG Coordinator",
-        org: "IEEE SCT SB",
-        period: "2025 – Present",
-        description: "Coordinating technical events and study groups focused on Artificial Intelligence and Machine Learning.",
-        impact: ["Community Growth", "Technical Workshops", "Student Mentorship"]
-    },
-    {
-        role: "Execom Member",
-        org: "CYBOTS SCTCE",
-        period: "2025 – Present",
-        description: "Exploring robotics systems and organizing hardware-focused sessions.",
-        impact: ["Robotics Workshops", "System Design", "Peer Learning"]
-    },
-    {
-        role: "Tech Team Member",
-        org: "IEDC SCTCE",
-        period: "2025 – Present",
-        description: "Contributing technical support and innovation ideas to the Innovation and Entrepreneurship Development Centre.",
-        impact: ["Technical Support", "Innovation Ecosystem"]
-    }
-];
+// JOURNEY and POSITIONS are now fetched from MDX files in /content
 
 export const PROJECTS = [
     {

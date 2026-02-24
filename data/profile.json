@@ -1,0 +1,47 @@
+{
+    "name": "Saran S Kumar",
+    "role": "Engineer — Embedded · Full-Stack · Robotics",
+    "headline": "CS (AI & ML) · IEEE Coordinator · Builder",
+    "location": "Trivandrum, Kerala, India",
+    "email": "saranskumarwh@gmail.com",
+    "links": {
+        "github": "https://github.com/saranskumar",
+        "linkedin": "https://www.linkedin.com/in/saran-s-kumar/",
+        "twitter": "https://www.twitter.com/SaranSKumar13",
+        "whatsapp": "https://wa.me/919876543210",
+        "instagram": "https://instagram.com/saraan.___",
+        "resume": "/saran-s-kumar-resume.pdf"
+    },
+    "quickLinks": [
+        {
+            "label": "GitHub",
+            "href": "https://github.com/saranskumar",
+            "icon": "github"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/saran-s-kumar/",
+            "icon": "linkedin"
+        },
+        {
+            "label": "WhatsApp",
+            "href": "https://wa.me/919876543210",
+            "icon": "whatsapp"
+        },
+        {
+            "label": "Email",
+            "href": "mailto:saranskumarwh@gmail.com",
+            "icon": "mail"
+        },
+        {
+            "label": "Resume",
+            "href": "/saran-s-kumar-resume.pdf",
+            "icon": "download"
+        },
+        {
+            "label": "Portfolio",
+            "href": "https://saranskumar.live",
+            "icon": "globe"
+        }
+    ]
+}

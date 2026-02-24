@@ -1,0 +1,54 @@
+---
+title: "AIROB 2025 Robotics System"
+category: "Robotics · Hardware"
+description: "1st-place winning robot at All Kerala Robotics Competition. Autonomous navigation with custom sensor fusion, motor control, and real-time decision logic."
+stack: ["Arduino Mega", "C++", "Ultrasonic Sensors", "IR Array", "L298N Motor Driver", "Custom PCB"]
+outcome: "1st Place — All Kerala Robotics Competition 2025"
+period: "Jan 2025 – Feb 2025"
+tags: ["robotics", "embedded", "c++", "arduino", "competition"]
+---
+
+## Problem
+
+Design and build an autonomous robot capable of completing a structured obstacle course under strict time constraints. The challenge required precise motor control, reliable obstacle detection, and a robust decision-making loop — all on a constrained microcontroller without an OS.
+
+## Architecture
+
+The system was split into three subsystems:
+
+1. **Perception Layer** — An ultrasonic array (front, left, right) combined with an IR line sensor array for surface tracking.
+2. **Decision Layer** — A finite state machine (FSM) running on the main loop, consuming sensor data to decide: FORWARD, TURN_LEFT, TURN_RIGHT, STOP.
+3. **Actuation Layer** — L298N dual H-bridge driving two DC motors with PWM speed control via Arduino's `analogWrite`.
+
+```
+[Sensors] → [FSM Controller] → [Motor Driver] → [Robot Motion]
+```
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Microcontroller | Arduino Mega 2560 |
+| Language | C++ (Arduino framework) |
+| Distance sensing | HC-SR04 Ultrasonic × 3 |
+| Line sensing | 8-channel IR array |
+| Motor control | L298N H-Bridge |
+| Power | 3S LiPo 11.1V |
+
+## Implementation
+
+The FSM had five states: `IDLE`, `NAVIGATE`, `WALL_AVOID`, `LINE_FOLLOW`, `STOP`. Transitions were triggered by sensor thresholds — e.g., if `frontDist < 15cm`, transition from `NAVIGATE` to `WALL_AVOID`.
+
+The key challenge was sensor noise. Ultrasonic sensors have interference at close range; this was solved with a rolling median filter over 5 readings per cycle, reducing false triggers by ~80%.
+
+Motor calibration was handled with a trim constant stored in `EEPROM`, allowing field adjustments without reflashing.
+
+## Outcome
+
+The robot completed all course stages successfully in the fastest recorded time of the competition, securing **1st place** at AIROB 2025, All Kerala Robotics Competition.
+
+## Lessons Learned
+
+- **Hardware-software co-design** matters. Sensor placement relative to chassis geometry directly affects FSM threshold values.
+- **Noise is your biggest enemy** in embedded systems. Invest in filtering early.
+- **EEPROM-backed configuration** is a simple but powerful field-debugging tool.

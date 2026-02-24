@@ -3,14 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Command } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS = [
-    { name: "About", href: "/#about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Systems", href: "/systems" },
+    { name: "MindLab", href: "/mindlab" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -18,16 +19,12 @@ export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
 
-    // Handle scroll effect
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close mobile menu on route change
     useEffect(() => {
         setIsOpen(false);
     }, [pathname]);
@@ -35,61 +32,68 @@ export function Navbar() {
     return (
         <header
             className={cn(
-                "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
-                scrolled ? "bg-background/80 backdrop-blur-md border-border/50 shadow-sm" : "bg-transparent"
+                "fixed top-0 w-full z-50 transition-all duration-300",
+                scrolled
+                    ? "bg-background/90 backdrop-blur-md border-b border-border shadow-sm"
+                    : "bg-transparent"
             )}
         >
-            <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight">
-                    <div className="p-1 rounded bg-foreground/5 border border-foreground/10">
-                        <Command className="w-4 h-4" />
-                    </div>
-                    <span>Saran</span>
+            <div className="mx-auto px-4 sm:px-6 h-14 flex items-center justify-between max-w-[1200px]">
+                {/* Logo — name only */}
+                <Link
+                    href="/"
+                    className="font-mono text-sm font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
+                >
+                    Saran S Kumar
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-7">
                     {NAV_LINKS.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-heading font-normal text-muted-foreground hover:text-foreground transition-colors"
+                            className={cn(
+                                "text-sm font-medium transition-colors",
+                                pathname === link.href || pathname.startsWith(link.href + "/")
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
+                            )}
                         >
                             {link.name}
                         </Link>
                     ))}
+                    <ThemeToggle />
                 </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden p-2 text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
+                {/* Mobile: Theme toggle + hamburger */}
+                <div className="md:hidden flex items-center gap-2">
+                    <ThemeToggle />
+                    <button
+                        className="p-2 text-muted-foreground hover:text-foreground"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Nav */}
             {isOpen && (
-                <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border shadow-lg p-6 space-y-4 animate-in slide-in-from-top-5">
+                <div className="md:hidden absolute top-14 left-0 w-full bg-background/95 backdrop-blur-md border-b border-border shadow-lg px-4 sm:px-6 py-5 space-y-4 animate-in slide-in-from-top-3">
                     {NAV_LINKS.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="block text-base font-medium text-muted-foreground hover:text-foreground py-2"
+                            className={cn(
+                                "block text-sm font-medium py-2 transition-colors",
+                                pathname === link.href ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                            )}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <div className="pt-4 border-t border-border">
-                        <Link
-                            href="/hire-me"
-                            className="flex items-center justify-center w-full rounded-md bg-primary py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-                        >
-                            Hire Me
-                        </Link>
-                    </div>
                 </div>
             )}
         </header>
