@@ -1,6 +1,7 @@
 import profileData from "@/data/profile.json";
 import { Github, Linkedin, Mail, Download, Globe, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -19,15 +20,15 @@ export default function ProfilePage() {
     return (
         <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4 py-10 sm:py-16 relative">
 
-        
+
 
             <div className="w-full max-w-xs sm:max-w-sm space-y-8">
 
                 {/* Identity */}
                 <div className="flex flex-col items-center text-center space-y-4">
-                    {/* Avatar monogram */}
-                    <div className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-primary font-mono select-none">SK</span>
+                    {/* Avatar image */}
+                    <div className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+                        <Image src="/saran.png" alt={profile.name} width={80} height={80} className="w-full h-full object-cover" />
                     </div>
                     <div className="space-y-1">
                         <h1 className="text-xl font-bold tracking-tight">{profile.name}</h1>
