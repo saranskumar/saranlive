@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { getAllMindLabPosts, getAllCategories, getAllTags } from "@/lib/mindlab";
-import { BlogCard } from "@/components/blog-card";
+import { MindLabCard } from "@/components/mindlab-card";
 import { Tag } from "@/components/tag";
 
 // MindLab is a client component for filter interactivity
@@ -66,7 +66,7 @@ export function MindLabClient({ posts, categories, tags }: MindLabClientProps) {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {filtered.map((post) => (
-                        <BlogCard key={post.slug} {...post} />
+                        <MindLabCard key={post.slug} {...post} />
                     ))}
                 </div>
             )}

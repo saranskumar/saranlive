@@ -366,7 +366,7 @@ Portfolio acts as:
 Must include:
 
 * projects
-* blog
+* MindLab
 * journey
 * positions
 * lab

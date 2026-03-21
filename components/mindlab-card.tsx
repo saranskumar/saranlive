@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Tag } from "@/components/tag";
 
-interface BlogCardProps {
+interface MindLabCardProps {
     slug: string;
     title: string;
     date: string;
@@ -12,7 +12,7 @@ interface BlogCardProps {
     readingTime: string;
 }
 
-export function BlogCard({
+export function MindLabCard({
     slug,
     title,
     date,
@@ -20,7 +20,7 @@ export function BlogCard({
     category,
     tags,
     readingTime,
-}: BlogCardProps) {
+}: MindLabCardProps) {
     const formatted = date
         ? new Date(date).toLocaleDateString("en-IN", {
             year: "numeric",
