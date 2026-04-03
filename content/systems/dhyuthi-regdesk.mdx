@@ -1,0 +1,47 @@
+---
+title: "Dhyuthi Ticketing System"
+category: "Event · Sub-System"
+description: "The official registration and ticketing sub-system for Dhyuthi. Handles auto-generation of tickets, QR-based check-ins, and volunteer-led participant confirmation."
+stack: ["Next.js", "PWA", "Real-time API", "Tailwind CSS", "Framer Motion"]
+outcome: "Live at dhyuthiregdesk.netlify.app - seamlessly integrated with the main Dhyuthi platform to automate the entire participant entry pipeline."
+period: "2025"
+tags: ["event", "ticketing", "automation", "pwa", "sub-system"]
+image: "/systems/dhyuthi-regdesk.png"
+---
+
+![Dhyuthi Ticketing System](/systems/dhyuthi-regdesk.png)
+
+## System Definition
+
+Dhyuthi Ticketing System is a specialized sub-system designed to work in tandem with the main Dhyuthi event platform. It automates the distribution and verification of participant entry to ensure a secure and frictionless admission process.
+
+## Automated Pipeline
+
+The system manages the entire admission lifecycle:
+
+1. **Registration**: A participant registers on the main Dhyuthi website.
+2. **Auto-Generation**: A unique digital ticket with a secure QR code is instantly generated.
+3. **Distribution**: Tickets are dispatched automatically to the participant's registered email address.
+4. **Admission**: In-field volunteers utilize a specialized PWA to scan participant QR codes and confirm entry in real-time.
+
+## System Architecture
+
+The platform architecture focuses on security and scalability:
+
+### QR-Based Confirmation
+Ensures that each ticket is unique and can only be scanned once. Real-time synchronization prevents duplicate entries and provides organizers with precise attendance analytics.
+
+### Volunteer Access Control
+A dedicated login and dashboard for volunteers, allowing them to manage admissions without having direct access to the master database.
+
+### PWA Performance
+Built as an installable Progressive Web App, enabling volunteers to perform high-speed QR scanning on any mobile device without the need for native store distribution.
+
+## Outcome
+
+The system significantly reduced on-site congestion by automating ticket distribution and speeding up the scanning process. This unified approach to event data ensured that the final attendance reports were highly accurate and simplified the administrative workload for the organizing committee.
+
+## Lessons Learned
+
+- Modular architecture allowed for individual event tracks to be updated independently without affecting the global check-in logs. 
+- Mobile-first UI design is critical for volunteers working in fast-paced event environments with varying network reliability.

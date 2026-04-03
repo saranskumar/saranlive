@@ -1,0 +1,38 @@
+---
+title: "Dhyuthi 6.0 Official Website"
+category: "Event · Web"
+description: "The flagship technical fest website for IEEE SCT SB. An immersive digital experience with interactive constellation effects, modular track navigation, and automated participant resources."
+stack: ["Next.js", "TypeScript", "Tailwind CSS", "Google Apps Script", "Google Sheets API", "Framer Motion"]
+outcome: "Successfully powered the flagship technical fest of IEEE SCT SB, managing event flow and participant engagement for 200+ students."
+period: "Oct 2024"
+tags: ["event", "web", "nextjs", "automation", "community"]
+image: "/systems/dhyuthi.png"
+demo: "https://dhyuthi-6test.vercel.app"
+---
+
+![Dhyuthi 6.0](/systems/dhyuthi.png)
+
+## Overview
+
+Dhyuthi is the largest technical event in the IEEE SCT SB calendar. The challenge was to create a digital hub capable of conveying the scale of the fest, while integrating an automated registration and ticketing system to handle over a thousand participants.
+
+## System Architecture
+
+The platform was built as a high-performance event command center:
+
+1. **Constellation Engine**: A custom-coded interactive background using canvas and particle systems to representing the "Dhyuthi" (Radiance) branding.
+2. **Modular Track System**: A scalable UI structure to categorize dozens of events into four primary technical tracks, allowing for simultaneous exploration.
+3. **Registration & Ticketing**: A robust backend powered by **Google Apps Script** and **Google Sheets**, automating the participant registration, confirmation, and the generation/delivery of digital tickets via email.
+
+## Implementation
+
+The interactive hero section features a particle-based constellation system that reacts to user navigation, symbolizing the interconnected nature of the technical community. Leveraging Next.js static generation ensured lightning-fast performance even under heavy load during competition hours. The inclusion of an automated certificate distribution portal significantly reduced manual overhead for the organizing committee.
+
+## Outcome
+
+The automated ticketing system successfully delivered and confirmed registrations for over 1000 participants, maintaining zero downtime throughout the 3-day event. It significantly reduced manual overhead, ensuring that every registrant received their credentials and event information instantly.
+
+## Lessons Learned
+
+- Modular component design allowed organizers to add or modify event details on-the-fly without requiring a full site deployment.
+- Mobile UI optimization for the schedule component was critical for fast, on-the-go information retrieval during the physical events.

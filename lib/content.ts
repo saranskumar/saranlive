@@ -57,12 +57,27 @@ export function getAllJourney(): JourneyItem[] {
     // effectively I want to sort by filename ASC.
 }
 
-// Revised getAllJourney to sort by start year (descending — newest first)
+/**
+ * Utility to calculate a sorting weight based on the period string.
+ * - Roles containing "Present" or "Current" get a massive weight bonus.
+ * - Extracts the first 4-digit year as the base weight.
+ */
+const getSortWeight = (period: string): number => {
+    const isPresent = /Present|Current/i.test(period);
+    const match = period.match(/\d{4}/);
+    const startYear = match ? parseInt(match[0], 10) : 0;
+    
+    // Weight = (10000 if Present) + StartYear
+    // This ensures "2026-Present" (12026) > "2024-Present" (12024) > "2026" (2026)
+    return (isPresent ? 10000 : 0) + startYear;
+};
+
 export function getAllJourneySorted(): JourneyItem[] {
     if (!fs.existsSync(journeyDirectory)) {
         return [];
     }
-    const fileNames = fs.readdirSync(journeyDirectory).sort();
+    
+    const fileNames = fs.readdirSync(journeyDirectory);
     const items = fileNames.map((fileName) => {
         const fullPath = path.join(journeyDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -73,26 +88,21 @@ export function getAllJourneySorted(): JourneyItem[] {
             period: data.period as string,
             type: data.type,
             description: content.trim(),
+            weight: getSortWeight(data.period) + (parseInt(fileName.split('-')[0], 10) / 100) // Small decimal bonus for higher prefix numbers
         };
     });
 
-    // Extract start year from strings like "2025", "2024 – Present", "2022 – 2024"
-    const getStartYear = (period: string): number => {
-        const match = period.match(/\d{4}/);
-        return match ? parseInt(match[0], 10) : 0;
-    };
-
-    return items.sort((a, b) => getStartYear(b.period) - getStartYear(a.period));
+    // Sort descending by calculated weight
+    return items.sort((a, b) => b.weight - a.weight);
 }
-
 
 export function getAllPositionsSorted(): PositionItem[] {
     if (!fs.existsSync(positionsDirectory)) {
         return [];
     }
 
-    const fileNames = fs.readdirSync(positionsDirectory).sort();
-    return fileNames.map((fileName) => {
+    const fileNames = fs.readdirSync(positionsDirectory);
+    const items = fileNames.map((fileName) => {
         const fullPath = path.join(positionsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data, content } = matter(fileContents);
@@ -103,6 +113,10 @@ export function getAllPositionsSorted(): PositionItem[] {
             period: data.period,
             impact: data.impact || [],
             description: content.trim(),
+            weight: getSortWeight(data.period) + (parseInt(fileName.split('-')[0], 10) / 100) // Small decimal bonus for higher prefix numbers
         };
     });
+
+    // Sort descending by calculated weight
+    return items.sort((a, b) => b.weight - a.weight);
 }

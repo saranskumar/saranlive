@@ -1,0 +1,39 @@
+---
+title: "Padi-P"
+category: "Academic · Intelligence System"
+description: "A distributed, data-driven academic decision support system built on top of ETLab. Transforms raw academic data into actionable insights, predictive analytics, and real-time student guidance."
+stack: ["Expo", "React Native", "Next.js", "Supabase", "PostgreSQL", "Edge Functions"]
+outcome: "Live at padi-p.vercel.app - supporting APK, Web, and PWA platforms with consolidated academic intelligence."
+period: "2024 - 2025"
+tags: ["academic", "system", "mobile", "pwa", "intelligence"]
+image: "/systems/padi-p.png"
+demo: "https://padi-p.vercel.app/"
+---
+
+![Padi-P](/systems/padi-p.png)
+
+## System Definition
+
+Padi-P is a distributed, data-driven academic decision support system built on top of ETLab. It transforms raw academic data (attendance, results, timetables) into actionable insights, predictive analytics, and real-time student guidance.
+
+## System Architecture
+
+The platform architecture focuses on a "Value Layer" which calculates attendance percentage, recovery estimation, and risk classification:
+
+1. **Data Ingestion Layer**: Periodic syncing of ETLab data through an attendance-service and automated background workers.
+2. **Data Storage Layer**: Converting temporary academic data into persistent intelligence-ready records within Supabase PostgreSQL.
+3. **Core Brain**: An intelligence and decision engine that evaluates future academic scenarios and suggests attendance-critical decisions.
+4. **Worker Layer**: The heartbeat of the system, running cron-based tasks to detect data changes, trigger analysis, and push notifications.
+
+## Core Modules
+
+### Attendance Management
+Tracks subject-wise and daily attendance. It maintains historical logs and calculates "safe bunks" or recovery classes needed to reach specific academic targets.
+
+### Academic Resource System
+A consolidated view of assignments (sourced from ETLab or student-shared) and module-based structured study notes for efficient examination preparation.
+
+
+## Outcome
+
+Padi-P is built as a unified system with Expo, delivering a seamless experience across Android APK, Web, and PWA platforms. It continuously monitors and predicts academic behavior to provide real-time decision support, transforming raw logs into academic intelligence.

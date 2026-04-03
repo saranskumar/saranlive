@@ -20,13 +20,25 @@ export interface SystemItem {
     content: string;
 }
 
+const SYSTEM_ORDER = [
+    "padi-p",
+    "neyyar",
+    "dhyuthi-regdesk",
+    "ieee-sctsb",
+    "thm-regdesk",
+    "airob-2025",
+    "aura",
+    "dhyuthi",
+    "montauk"
+];
+
 export function getAllSystems(): SystemItem[] {
     if (!fs.existsSync(systemsDirectory)) {
         return [];
     }
 
-    const fileNames = fs.readdirSync(systemsDirectory).sort();
-    return fileNames
+    const fileNames = fs.readdirSync(systemsDirectory);
+    const systems = fileNames
         .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"))
         .map((fileName) => {
             const slug = fileName.replace(/\.mdx?$/, "");
@@ -50,6 +62,16 @@ export function getAllSystems(): SystemItem[] {
                 content: content.trim(),
             };
         });
+
+    return systems.sort((a, b) => {
+        const indexA = SYSTEM_ORDER.indexOf(a.slug);
+        const indexB = SYSTEM_ORDER.indexOf(b.slug);
+        
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        return a.slug.localeCompare(b.slug);
+    });
 }
 
 export function getSystemBySlug(slug: string): SystemItem | null {

@@ -1,56 +1,40 @@
 ---
 title: "AIROB 2025 Robotics System"
 category: "Robotics · Hardware"
-description: "1st-place winning robot at All Kerala Robotics Competition. Autonomous navigation with custom sensor fusion, motor control, and real-time decision logic."
+description: "1st-place winning Line Follower Robot (LFR) built from scratch in under 18 hours. Features high-speed autonomous navigation with custom sensor fusion and real-time PID control."
 stack: ["Arduino Mega", "C++", "Ultrasonic Sensors", "IR Array", "L298N Motor Driver", "Custom PCB"]
-outcome: "1st Place - All Kerala Robotics Competition 2025"
+outcome: "1st Place - AIROB 2025 Line Follower Race"
 period: "Jan 2025 - Feb 2025"
 tags: ["robotics", "embedded", "c++", "arduino", "competition"]
-image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80"
+image: "/systems/airob-2025.png"
 ---
 
-## Problem
+![AIROB 2025 Robotics System](/systems/airob-2025.png)
 
-Design and build an autonomous robot capable of completing a structured obstacle course under strict time constraints. The challenge required precise motor control, reliable obstacle detection, and a robust decision-making loop - all on a constrained microcontroller without an OS.
+## Overview
 
-## Architecture
+The challenge was to design and build a high-speed autonomous Line Follower Robot (LFR) from scratch in less than 18 hours. The task required rapid prototyping of hardware, precise motor calibration, and a robust control loop to navigate a complex race track under intense competition pressure.
 
-The system was split into three subsystems:
+## System Architecture
 
-1. **Perception Layer** - An ultrasonic array (front, left, right) combined with an IR line sensor array for surface tracking.
-2. **Decision Layer** - A finite state machine (FSM) running on the main loop, consuming sensor data to decide: FORWARD, TURN_LEFT, TURN_RIGHT, STOP.
-3. **Actuation Layer** - L298N dual H-bridge driving two DC motors with PWM speed control via Arduino's `analogWrite`.
+The robot was developed as a distributed system with three core layers:
 
-```
-[Sensors] → [FSM Controller] → [Motor Driver] → [Robot Motion]
-```
-
-## Tech Stack
-
-| Component | Technology |
-|-----------|------------|
-| Microcontroller | Arduino Mega 2560 |
-| Language | C++ (Arduino framework) |
-| Distance sensing | HC-SR04 Ultrasonic × 3 |
-| Line sensing | 8-channel IR array |
-| Motor control | L298N H-Bridge |
-| Power | 3S LiPo 11.1V |
+1. **Perception**: An ultrasonic array (front, left, right) combined with an IR line sensor array for surface tracking.
+2. **Decision**: A finite state machine (FSM) running on the main control loop, processing raw sensor data to determine motion states (Forward, Turn, Avoid, Stop).
+3. **Actuation**: L298N dual H-bridge driving high-torque DC motors with PWM speed control for granular movement.
 
 ## Implementation
 
-The FSM had five states: `IDLE`, `NAVIGATE`, `WALL_AVOID`, `LINE_FOLLOW`, `STOP`. Transitions were triggered by sensor thresholds - e.g., if `frontDist < 15cm`, transition from `NAVIGATE` to `WALL_AVOID`.
+The control logic utilized an FSM with specialized states for different course segments: `NAVIGATE`, `WALL_AVOID`, `LINE_FOLLOW`, and `STOP`. Transitions were triggered by real-time sensor thresholds.
 
-The key challenge was sensor noise. Ultrasonic sensors have interference at close range; this was solved with a rolling median filter over 5 readings per cycle, reducing false triggers by ~80%.
-
-Motor calibration was handled with a trim constant stored in `EEPROM`, allowing field adjustments without reflashing.
+A major engineering challenge was the 18-hour time limit, which necessitated a "first-time-right" approach to hardware assembly and firmware logic. High-speed stability was achieved by implementing a specialized PID control algorithm for line tracking, ensuring the robot could maintain maximum velocity on straights while cornering accurately. Additionally, calibration constants were stored in `EEPROM` for rapid tuning during the short testing window.
 
 ## Outcome
 
-The robot completed all course stages successfully in the fastest recorded time of the competition, securing **1st place** at AIROB 2025, All Kerala Robotics Competition.
+The LFR achieved the fastest recorded lap, securing first place at the AIROB 2025 Line Follower Race. The project proved that rapid high-performance engineering is possible through efficient hardware-software co-design and optimized control algorithms.
 
 ## Lessons Learned
 
-- **Hardware-software co-design** matters. Sensor placement relative to chassis geometry directly affects FSM threshold values.
-- **Noise is your biggest enemy** in embedded systems. Invest in filtering early.
-- **EEPROM-backed configuration** is a simple but powerful field-debugging tool.
-
+- Sensor placement relative to chassis geometry is critical to FSM stability.
+- Noise management is the primary challenge in embedded systems; early filtering pays off.
+- EEPROM-backed configuration is an essential tool for rapid field deployment and debugging.

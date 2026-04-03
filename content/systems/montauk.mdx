@@ -12,37 +12,30 @@ demo: "https://montauk-five.vercel.app"
 password: "HAWKINS1983"
 ---
 
-## Problem
+![Hawkins Incident Command Console](/systems/montauk.png)
 
-Building a technically impressive creative project that demonstrates full-stack web capabilities, UI/UX depth, and audio engineering — while telling an immersive story.
+## Overview
 
-## Architecture
+The goal was to build a technically impressive creative project that demonstrates full-stack web capabilities, UI/UX depth, and audio engineering while telling an immersive story. Directly inspired by the **Stranger Things** series (originally titled *Montauk*), the Hawkins Incident Command Console is a fictional 1980s containment system simulation.
 
-A Next.js 14 app structured as a fictional 1980s containment system with three main modules:
+## System Architecture
 
-1. **Reality Monitor** - Dual-mode UI (Standard / Upside Down) with CRT emulation, chromatic aberration, and particle effects.
-2. **Incident Tracker** - Live feed of threats classified by severity and dimensional origin, with a full status workflow.
-3. **CMD Terminal** - Functional in-browser terminal with custom system commands (`/HELP`, `/INCIDENT`, `/STAT`, `/DOOM`).
+The project is structured as a Next.js 14 application with three primary functional modules:
+
+1. **Reality Monitor**: A dual-mode interface allowing users to breach the **Upside Down**. It features advanced CRT emulation, chromatic aberration, and organic particle decay to simulate the atmospheric "ash" of the alternate dimension.
+2. **Dimensional Tracker**: A live feed of threats categorized by their proximity to the Hawking's gate, tracking the movement of entities like the Demogorgon and the Mind Flayer.
+3. **CMD Terminal**: A retro-style OS terminal with deep-level commands (e.g., `SCAN`, `BREACH`, `INIT_OS`) used to stabilize the rift.
 
 ## Implementation
 
-- **Visual Layer**: Tailwind CSS extended with custom CRT scan-line animations and chromatic aberration filters.
-- **Motion**: Framer Motion handles the boot sequence, reality-shift transitions, and particle anomaly animations.
-- **Audio**: Web Audio API synthesizes a reactive soundscape — each dimension has its own audio profile (computer hums vs. organic drones), intensifying with threat level.
-- **State**: LocalStorage persists session incidents and operator settings across reloads.
-- **Signal Calibrator**: Interactive sliders with real-time waveform visualization and audio frequency feedback.
+The system's core innovation is the **Reality-Shift Toggle**, which triggers a seamless transformation of the entire UI into the **Upside Down**. This transition utilizes Framer Motion to orchestrate a "glitch" effect, shifting the palette to decaying blues and greys while spawning interactive particle anomalies. A high-fidelity soundscape, synthesized via the **Web Audio API**, provides an unsettling organic background that replaces the technical hum of the standard mode. Signal calibration sliders allow users to interactively "tune" into dimensional frequencies, visualized through real-time SVG waveforms.
 
 ## Outcome
 
-A fully deployable, immersive creative web experience demonstrating:
-
-- Complex state management and UI orchestration
-- Browser-native audio synthesis without external libraries
-- Responsive, performance-optimised animation at 60fps
-- Accessible keyboard-driven operator controls
+The result is a fully deployable, immersive creative web experience that serves as a technical and aesthetic homage to the **Stranger Things** universe. It demonstrates complex state management, 60fps performance-optimized animations, and browser-native audio synthesis without any external libraries.
 
 ## Lessons Learned
 
-- **Web Audio API** opens powerful real-time synthesis possibilities directly in the browser — no dependency needed.
-- **CRT aesthetics with CSS** can be achieved cleanly with a small set of layered filter and animation utilities.
-- **Framer Motion + Next.js** works especially well for phased boot sequences with precise timing.
+- **Web Audio API**: Powerful real-time synthesis possibilities are available directly in the browser, eliminating the need for heavy external audio dependencies.
+- **CRT Aesthetics**: High-fidelity retro effects can be achieved cleanly with a small set of layered CSS filters and animation utilities.
+- **Timing Orchestration**: Combining Framer Motion with Next.js is highly effective for precisely timed complex UI sequences like a system boot sequence.
