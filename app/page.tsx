@@ -26,8 +26,7 @@ export default function Home() {
       {/* 5. Proof Strip */}
       <ProofLayer />
 
-      {/* 6. MindLab Entry */}
-      <MindLabCTA />
+    
 
       {/* 7. Contact CTA */}
       <ContactCTA />

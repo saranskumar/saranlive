@@ -1,15 +1,13 @@
-// MindLab always renders in light mode — reading-first environment.
-// The .force-light class overrides .dark CSS vars regardless of the
-// global theme toggle, matching the deeply_leafy_light token set.
-
+// MindLab layout supports both light and dark themes from the design system.
 export default function MindLabLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
     return (
-        <div className="force-light bg-background text-foreground min-h-screen">
+        <div className="bg-background text-foreground min-h-screen">
             {children}
         </div>
     );
 }
+

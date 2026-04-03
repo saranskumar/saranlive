@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export function ContactCTA() {
     return (
@@ -11,8 +11,8 @@ export function ContactCTA() {
                     </h2>
                     <p className="text-muted-foreground text-base leading-relaxed">
                         Open to internships, collaborations, and interesting projects.
-                        If you&apos;re working on something real — hardware, software, or
-                        both — reach out.
+                        If you&apos;re working on something real - hardware, software, or
+                        both - reach out.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-2">
@@ -34,3 +34,4 @@ export function ContactCTA() {
         </section>
     );
 }
+

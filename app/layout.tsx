@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
@@ -23,7 +23,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Saran S Kumar — Engineer",
+    default: "Saran S Kumar - Engineer",
     template: "%s | Saran S Kumar",
   },
   description:
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Saran S Kumar" }],
   openGraph: {
-    title: "Saran S Kumar — Engineer",
+    title: "Saran S Kumar :Engineer",
     description: "Builder of real-world systems across embedded, full-stack, robotics, and AI.",
     siteName: "saranskumar.live",
     locale: "en_IN",
@@ -71,3 +71,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 const RECENT_POSTS = [
@@ -6,7 +6,7 @@ const RECENT_POSTS = [
         slug: "systems-thinking",
         title: "Systems Thinking for Engineers",
         category: "Systems Thinking",
-        excerpt: "How thinking in systems — not components — changed the way I approach every build.",
+        excerpt: "How thinking in systems - not components - changed the way I approach every build.",
         readingTime: "5 min read",
     },
     {
@@ -14,7 +14,7 @@ const RECENT_POSTS = [
         title: "Embedded vs Web: A Bridge Builder's Take",
         category: "Engineering Logs",
         excerpt:
-            "What firmware engineers and web developers can learn from each other — and why the gap is smaller than you think.",
+            "What firmware engineers and web developers can learn from each other - and why the gap is smaller than you think.",
         readingTime: "7 min read",
     },
 ];
@@ -81,3 +81,4 @@ export function MindLabCTA() {
         </section>
     );
 }
+

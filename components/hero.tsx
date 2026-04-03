@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -6,7 +6,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 export function HeroSection() {
     return (
         <section className="min-h-screen flex flex-col justify-center px-6 py-24 relative overflow-hidden">
-            {/* Subtle dot grid — no gradient */}
+            {/* Subtle dot grid - no gradient */}
             <div
                 className="pointer-events-none absolute inset-0 opacity-[0.06]"
                 style={{
@@ -26,11 +26,11 @@ export function HeroSection() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-3">
-                    Embedded hardware, full-stack engineering, robotics, and AI —
+                    Embedded hardware, full-stack engineering, robotics, and AI -
                     built from first principles.
                 </p>
                 <p className="text-sm text-muted-foreground/60 mb-12 font-mono">
-                    CS (AI &amp; ML) at SCT Engineering · IEEE Coordinator · Trivandrum
+                    CS (AI &amp; ML) at SCT Engineering · IEEE Volunteer · Trivandrum
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-3">
@@ -53,3 +53,4 @@ export function HeroSection() {
         </section>
     );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -39,7 +39,7 @@ export function Navbar() {
             )}
         >
             <div className="mx-auto px-4 sm:px-6 h-14 flex items-center justify-between max-w-[1200px]">
-                {/* Logo — name only */}
+                {/* Logo - name only */}
                 <Link
                     href="/"
                     className="font-mono text-sm font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
@@ -99,3 +99,4 @@ export function Navbar() {
         </header>
     );
 }
+

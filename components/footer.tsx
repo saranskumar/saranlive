@@ -59,7 +59,7 @@ export function Footer() {
 
                 <div className="pt-6 border-t border-border">
                     <p className="text-xs text-muted-foreground">
-                        &copy; {new Date().getFullYear()} Saran S Kumar &mdash; saranskumar.live
+                        &copy; {new Date().getFullYear()} Saran S Kumar : saranskumar.live
                     </p>
                 </div>
             </div>

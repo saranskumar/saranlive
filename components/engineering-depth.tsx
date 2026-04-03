@@ -1,4 +1,4 @@
-import { Cpu, Globe, Users, Brain } from "lucide-react";
+﻿import { Cpu, Globe, Users, Brain } from "lucide-react";
 
 const DEPTH_AREAS = [
     {
@@ -35,7 +35,7 @@ const DEPTH_AREAS = [
         icon: Brain,
         title: "AI Exploration",
         skills: [
-            "CS (AI & ML) — SCT Engineering",
+            "CS (AI & ML) - SCT Engineering",
             "Neural networks & model training",
             "Autonomous systems research",
             "Prompt engineering & LLM tooling",
@@ -81,3 +81,4 @@ export function EngineeringDepth() {
         </section>
     );
 }
+

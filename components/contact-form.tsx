@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
@@ -29,13 +29,13 @@ export function ContactForm() {
         setStatus("sending");
 
         if (!APPS_SCRIPT_URL) {
-            // No endpoint yet — show success for demo
+            // No endpoint yet - show success for demo
             setTimeout(() => setStatus("success"), 800);
             return;
         }
 
         try {
-            // Apps Script reads e.parameters — must send URL-encoded, not JSON
+            // Apps Script reads e.parameters - must send URL-encoded, not JSON
             const payload = new URLSearchParams({
                 ...form,
                 formDataNameOrder: JSON.stringify(FIELD_ORDER),
@@ -51,7 +51,7 @@ export function ContactForm() {
                 body: payload.toString(),
             });
 
-            // no-cors means we can't read the response — assume success
+            // no-cors means we can't read the response - assume success
             setStatus("success");
             setForm({ name: "", email: "", subject: "", message: "" });
         } catch {
@@ -68,7 +68,7 @@ export function ContactForm() {
                 <div>
                     <p className="text-sm font-medium text-foreground">Message sent!</p>
                     <p className="text-xs text-muted-foreground mt-0.5">
-                        Thanks for reaching out — I&apos;ll get back to you soon.
+                        Thanks for reaching out - I&apos;ll get back to you soon.
                     </p>
                 </div>
             </div>
@@ -128,7 +128,7 @@ export function ContactForm() {
 
             {status === "error" && (
                 <p className="text-xs text-destructive font-mono">
-                    Something went wrong — try emailing directly at saranskumarwh@gmail.com
+                    Something went wrong - try emailing directly at saranskumarwh@gmail.com
                 </p>
             )}
 
@@ -179,3 +179,4 @@ function Field({
         </div>
     );
 }
+

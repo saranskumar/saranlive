@@ -1,4 +1,4 @@
----
+﻿---
 title: "IoT Environmental Monitor"
 category: "IoT · Cloud"
 description: "Distributed environmental sensor network using ESP32 + LoRa for long-range, low-power data collection with cloud dashboard integration."
@@ -10,7 +10,7 @@ tags: ["iot", "embedded", "esp32", "lora", "cloud"]
 
 ## Problem
 
-Campus energy and environmental data (temperature, humidity, CO2, light levels) was fragmented — individual sensors with no aggregation or trend visibility. Goal: build a multi-node wireless sensor network with centralized cloud storage and visualization, without laying any new infrastructure.
+Campus energy and environmental data (temperature, humidity, CO2, light levels) was fragmented - individual sensors with no aggregation or trend visibility. Goal: build a multi-node wireless sensor network with centralized cloud storage and visualization, without laying any new infrastructure.
 
 ## Architecture
 
@@ -56,6 +56,7 @@ Sensors communicated over I2C and single-wire digital protocols to the ESP32.
 
 ## Lessons Learned
 
-- **LoRa duty cycle limits** must be calculated explicitly — spreading factor and payload size both affect airtime.
+- **LoRa duty cycle limits** must be calculated explicitly - spreading factor and payload size both affect airtime.
 - **Deep sleep + LoRa wake** is non-trivial: SPI state must be re-initialised after wake, not assumed to persist.
-- Cloud IoT Core is being deprecated — future iteration will use EMQX or HiveMQ for the broker.
+- Cloud IoT Core is being deprecated - future iteration will use EMQX or HiveMQ for the broker.
+

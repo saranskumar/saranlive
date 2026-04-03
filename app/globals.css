@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /*
-  deeply_leafy design system — saranskumar.live
+  deeply_leafy design system - saranskumar.live
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   DARK  (default)         │  LIGHT
   ─────────────────────── │  ──────────────────────
@@ -97,8 +97,7 @@
     }
 
     /*
-      .force-light — applies deeply_leafy_light vars regardless
-      of the html.dark class. Used on /mindlab and /profile pages
+      of the html.dark class. Used on pages
       so they always render in the light reading environment.
     */
     .force-light {

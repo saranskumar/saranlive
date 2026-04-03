@@ -1,4 +1,4 @@
-# Saran S Kumar — Complete Personal & Technical Identity Document
+﻿# Saran S Kumar - Complete Personal & Technical Identity Document
 
 Master reference combining: LinkedIn + GitHub + projects + roles + technical direction + portfolio planning
 
@@ -29,7 +29,7 @@ Hands-on learner building across software, AI, robotics, and systems while growi
 
 # EDUCATION
 
-### Bachelor of Technology — Computer Science (AI & ML)
+### Bachelor of Technology - Computer Science (AI & ML)
 
 Sree Chitra Thirunal College of Engineering
 2024 – 2028
@@ -43,7 +43,7 @@ Focus:
 
 ---
 
-### Higher Secondary — Science
+### Higher Secondary - Science
 
 DVMNMMHSS Maranalloor
 Score: 95%
@@ -138,7 +138,7 @@ Secondary:
 
 # EXPERIENCE & ROLES
 
-### AI SIG Coordinator — IEEE SCT SB
+### AI SIG Coordinator - IEEE SCT SB
 
 2025 – Present
 
@@ -150,7 +150,7 @@ Responsibilities:
 
 ---
 
-### Student Branch Ambassador — IEEEXtreme
+### Student Branch Ambassador - IEEEXtreme
 
 2025 – Present
 
@@ -162,7 +162,7 @@ Role:
 
 ---
 
-### Tech Team — IEDC SCTCE
+### Tech Team - IEDC SCTCE
 
 2025 – Present
 
@@ -173,7 +173,7 @@ Contribution:
 
 ---
 
-### Execom Member — CYBOTS SCTCE
+### Execom Member - CYBOTS SCTCE
 
 2025 – Present
 
@@ -184,7 +184,7 @@ Focus:
 
 ---
 
-### Volunteer Leadership — IEEE Events
+### Volunteer Leadership - IEEE Events
 
 Participation in:
 
@@ -194,7 +194,7 @@ Participation in:
 
 ---
 
-### Troop Leader — Bharat Scouts & Guides
+### Troop Leader - Bharat Scouts & Guides
 
 2022 – Present
 
@@ -210,7 +210,7 @@ Focus:
 
 ### Hackathon Winner
 
-AIROB 2025 — AI robotics hackathon
+AIROB 2025 - AI robotics hackathon
 
 Learnings:
 
@@ -248,7 +248,7 @@ Worked with:
 
 ### Certifications
 
-* E-Commerce Level 1 — Unstop
+* E-Commerce Level 1 - Unstop
 
 ---
 
@@ -427,7 +427,7 @@ This document defines the base for:
 It is the foundation of the personal technical identity.
 
 
-# Saran S Kumar — LinkedIn Profile Extract (Verified)
+# Saran S Kumar - LinkedIn Profile Extract (Verified)
 
 Source: linkedin.com/in/saran-s-kumar
 This document captures only factual information visible on the LinkedIn profile and converts it into structured data for portfolio, resume, and personal branding use.
@@ -481,14 +481,14 @@ Interests beyond tech:
 
 ## Education
 
-### Bachelor of Technology — Computer Science (AI & ML)
+### Bachelor of Technology - Computer Science (AI & ML)
 
 Institution: Sree Chitra Thirunal College of Engineering
 Duration: 2024 – 2028
 
 ---
 
-### Higher Secondary — Science
+### Higher Secondary - Science
 
 Institution: DVMNMMHSS Maranalloor
 Score: 95%
@@ -502,25 +502,25 @@ Activities:
 
 ## Experience & Roles
 
-### Student Branch Ambassador — IEEEXtreme
+### Student Branch Ambassador - IEEEXtreme
 
 Duration: Jun 2025 – Present
 
 ---
 
-### AI SIG Coordinator — IEEE SCT SB
+### AI SIG Coordinator - IEEE SCT SB
 
 Duration: Feb 2025 – Present
 
 ---
 
-### Execom Member — CYBOTS SCTCE
+### Execom Member - CYBOTS SCTCE
 
 Duration: Aug 2025 – Present
 
 ---
 
-### Tech Team — IEDC SCTCE
+### Tech Team - IEDC SCTCE
 
 Duration: Jul 2025 – Present
 
@@ -528,7 +528,7 @@ Duration: Jul 2025 – Present
 
 ## Volunteering
 
-### Troop Leader — Bharat Scouts & Guides
+### Troop Leader - Bharat Scouts & Guides
 
 Duration: Oct 2022 – Present
 
@@ -542,7 +542,7 @@ Focus:
 
 ## Certifications
 
-### Certificate of Participation — Level 1 E-Commerce
+### Certificate of Participation - Level 1 E-Commerce
 
 Platform: Unstop
 Issued: Aug 2024
@@ -565,7 +565,7 @@ Issued: Aug 2024
 
 ### Hackathon
 
-* Winner — AIROB 2025 (AI robotics hackathon)
+* Winner - AIROB 2025 (AI robotics hackathon)
 * Learned circuits, robotics pressure-handling, team execution
 
 ---
@@ -701,7 +701,7 @@ This LinkedIn identity forms a core foundation for:
 * personal brand voice.
 
 
-# Saran Kumar — Technical Identity & Builder Profile
+# Saran Kumar - Technical Identity & Builder Profile
 
 Compiled from:
 
@@ -937,3 +937,4 @@ The portfolio must reflect:
 not a designer,
 not just a coder,
 but a **calm, serious builder evolving through projects.**
+

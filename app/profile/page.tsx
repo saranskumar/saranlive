@@ -1,4 +1,4 @@
-import profileData from "@/data/profile.json";
+﻿import profileData from "@/data/profile.json";
 import { Github, Linkedin, Mail, Download, Globe, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -48,7 +48,7 @@ export default function ProfilePage() {
                     </div>
                 </div>
 
-                {/* Quick links — tap-friendly 52px min height */}
+                {/* Quick links - tap-friendly 52px min height */}
                 <div className="grid grid-cols-2 gap-3">
                     {profile.quickLinks.map((link) => {
                         const Icon = ICON_MAP[link.icon] ?? Globe;

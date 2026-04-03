@@ -1,4 +1,4 @@
-const POSITIONS = [
+﻿const POSITIONS = [
     {
         role: "AI SIG Coordinator",
         org: "IEEE SCT SB",
@@ -10,7 +10,7 @@ const POSITIONS = [
         ],
     },
     {
-        role: "Campus Ambassador — Xtreme 19.0",
+        role: "Campus Ambassador - Xtreme 19.0",
         org: "IEEE Volunteer, IEEE SCT SB",
         period: "2025",
         impact: [
@@ -49,7 +49,7 @@ export function LeadershipExecution() {
                                         key={item}
                                         className="flex items-start gap-2 text-xs text-muted-foreground"
                                     >
-                                        <span className="text-primary mt-0.5 shrink-0">—</span>
+                                        <span className="text-primary mt-0.5 shrink-0">-</span>
                                         {item}
                                     </li>
                                 ))}
@@ -61,3 +61,4 @@ export function LeadershipExecution() {
         </section>
     );
 }
+

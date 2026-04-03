@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getAllJourneySorted, getAllPositionsSorted } from "@/lib/content";
+import { getAllPositionsSorted } from "@/lib/content";
 import { PROFILE } from "@/lib/data";
 import { Code, Database, Cpu, Wrench } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "About",
     description:
-        "Engineering philosophy, skills, journey, and leadership — Saran S Kumar, builder of real-world systems.",
+        "Engineering philosophy, skills, journey, and leadership - Saran S Kumar, builder of real-world systems.",
 };
 
 const SKILLS = {
@@ -41,7 +41,7 @@ const FOCUS_AREAS = [
     {
         title: "Systems Thinking",
         description:
-            "Designing across layers — from electron to endpoint. Understanding interactions, not just components.",
+            "Designing across layers - from electron to endpoint. Understanding interactions, not just components.",
     },
     {
         title: "Leadership & Community",
@@ -64,7 +64,7 @@ const PHILOSOPHY = [
     {
         title: "Constraints are creative",
         description:
-            "Limited RAM, tight deadlines, sparse WiFi — constraints produce better solutions than infinite resources.",
+            "Limited RAM, tight deadlines, sparse WiFi - constraints produce better solutions than infinite resources.",
     },
     {
         title: "Ship, then improve",
@@ -74,7 +74,6 @@ const PHILOSOPHY = [
 ];
 
 export default function AboutPage() {
-    const journey = getAllJourneySorted();
     const positions = getAllPositionsSorted();
 
     return (
@@ -113,35 +112,6 @@ export default function AboutPage() {
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     {area.description}
                                 </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Journey Timeline */}
-            <section className="section-divider py-16 md:py-20 px-4 sm:px-6">
-                <div className="mx-auto max-w-[1200px]">
-                    <p className="mono-label mb-3">timeline</p>
-                    <h2 className="text-3xl font-bold tracking-tight mb-12">Journey</h2>
-                    <div className="border-l-2 border-border ml-2 space-y-12">
-                        {journey.map((item, index) => (
-                            <div key={index} className="relative pl-8">
-                                <div className="absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-background" />
-                                <div className="space-y-2">
-                                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                                        <span className="mono-label">{item.period}</span>
-                                        <h3 className="font-semibold text-lg text-foreground">
-                                            {item.title}
-                                        </h3>
-                                    </div>
-                                    <p className="text-sm font-medium text-foreground/80">
-                                        {item.organization}
-                                    </p>
-                                    <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
-                                        {item.description}
-                                    </p>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -280,3 +250,4 @@ function SkillCategory({
         </div>
     );
 }
+

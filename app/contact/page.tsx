@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata: Metadata = {
     title: "Contact",
     description:
-        "Get in touch with Saran S Kumar — open to internships, collaborations, and interesting builds.",
+        "Get in touch with Saran S Kumar - open to internships, collaborations, and interesting builds.",
 };
 
 const CONTACT_LINKS = [
@@ -89,7 +89,7 @@ export default function ContactPage() {
                         ))}
                     </div>
 
-                    {/* Contact form — opens default mail app */}
+                    {/* Contact form - opens default mail app */}
                     <div className="space-y-4 pt-2 border-t border-border/60">
                         <div>
                             <p className="mono-label mb-1">send a message</p>
@@ -112,3 +112,4 @@ export default function ContactPage() {
         </main>
     );
 }
+

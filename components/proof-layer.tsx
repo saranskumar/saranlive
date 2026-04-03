@@ -1,5 +1,5 @@
-const STATS = [
-    { value: "1st", label: "Place — AIROB 2025", sub: "All Kerala Robotics Competition" },
+﻿const STATS = [
+    { value: "1st", label: "Place - AIROB 2025", sub: "All Kerala Robotics Competition" },
     { value: "500+", label: "Attendees Managed", sub: "IEEE THM 2025 Event System" },
     { value: "4+", label: "Real Systems Built", sub: "Hardware · Cloud · Web" },
     { value: "2+", label: "Leadership Positions", sub: "IEEE Coordinator & Lead" },
@@ -29,3 +29,4 @@ export function ProofLayer() {
         </section>
     );
 }
+

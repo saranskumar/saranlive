@@ -1,5 +1,5 @@
-/**
- * contact.gs — Google Apps Script for saranskumar.live contact form
+﻿/**
+ * contact.gs - Google Apps Script for saranskumar.live contact form
  * Deploy as Web App: Execute as "Me", Access "Anyone"
  *
  * Sheet setup:
@@ -24,7 +24,7 @@ function doPost(e) {
     var subject = getField(data, "subject") || "Message from saranskumar.live";
     var message = getField(data, "message");
 
-    // 1. Record to sheet (non-fatal — email still sends if this fails)
+    // 1. Record to sheet (non-fatal - email still sends if this fails)
     try {
       recordToSheet({ name: name, email: email, subject: subject, message: message });
     } catch (sheetErr) {
@@ -50,7 +50,7 @@ function doPost(e) {
 // ─── Sheet writer ─────────────────────────────────────────────────────────────
 
 function recordToSheet(fields) {
-  // Use getScriptLock() — getDocumentLock() doesn't work for standalone scripts
+  // Use getScriptLock() - getDocumentLock() doesn't work for standalone scripts
   var lock = LockService.getScriptLock();
   lock.waitLock(30000);
 

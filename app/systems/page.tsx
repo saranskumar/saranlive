@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { getAllSystems } from "@/lib/systems";
 import { SystemCard } from "@/components/system-card";
 
@@ -22,7 +22,7 @@ export default function SystemsPage() {
                     </h1>
                     <p className="text-muted-foreground text-lg max-w-2xl">
                         Real problems, real constraints, real outcomes. Each system is documented
-                        end-to-end — from problem statement to lessons learned.
+                        end-to-end - from problem statement to lessons learned.
                     </p>
                 </header>
 
@@ -49,3 +49,4 @@ export default function SystemsPage() {
         </main>
     );
 }
+
