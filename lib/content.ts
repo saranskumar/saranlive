@@ -57,24 +57,32 @@ export function getAllJourney(): JourneyItem[] {
     // effectively I want to sort by filename ASC.
 }
 
-// Revised getAllJourney to sort by filename
+// Revised getAllJourney to sort by start year (descending — newest first)
 export function getAllJourneySorted(): JourneyItem[] {
     if (!fs.existsSync(journeyDirectory)) {
         return [];
     }
     const fileNames = fs.readdirSync(journeyDirectory).sort();
-    return fileNames.map((fileName) => {
+    const items = fileNames.map((fileName) => {
         const fullPath = path.join(journeyDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data, content } = matter(fileContents);
         return {
             title: data.title,
             organization: data.organization,
-            period: data.period,
+            period: data.period as string,
             type: data.type,
             description: content.trim(),
         };
     });
+
+    // Extract start year from strings like "2025", "2024 – Present", "2022 – 2024"
+    const getStartYear = (period: string): number => {
+        const match = period.match(/\d{4}/);
+        return match ? parseInt(match[0], 10) : 0;
+    };
+
+    return items.sort((a, b) => getStartYear(b.period) - getStartYear(a.period));
 }
 
 
