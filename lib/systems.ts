@@ -14,6 +14,9 @@ export interface SystemItem {
     period: string;
     tags: string[];
     image?: string;
+    github?: string;
+    demo?: string;
+    password?: string;
     content: string;
 }
 
@@ -41,6 +44,9 @@ export function getAllSystems(): SystemItem[] {
                 period: data.period ?? "",
                 tags: data.tags ?? [],
                 image: data.image ?? null,
+                github: data.github ?? null,
+                demo: data.demo ?? null,
+                password: data.password ?? null,
                 content: content.trim(),
             };
         });
@@ -66,6 +72,9 @@ export function getSystemBySlug(slug: string): SystemItem | null {
         period: data.period ?? "",
         tags: data.tags ?? [],
         image: data.image ?? null,
+        github: data.github ?? null,
+        demo: data.demo ?? null,
+        password: data.password ?? null,
         content: content.trim(),
     };
 }

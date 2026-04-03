@@ -43,6 +43,8 @@ export default function SystemsPage() {
                                 outcome={system.outcome}
                                 period={system.period}
                                 image={system.image}
+                                github={system.github}
+                                demo={system.demo}
                             />
                         ))}
                     </div>

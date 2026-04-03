@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, ExternalLink } from "lucide-react";
 
 interface SystemCardProps {
     slug: string;
@@ -11,6 +13,9 @@ interface SystemCardProps {
     outcome: string;
     period: string;
     image?: string | null;
+    github?: string | null;
+    demo?: string | null;
+    password?: string | null;
 }
 
 export function SystemCard({
@@ -22,11 +27,23 @@ export function SystemCard({
     outcome,
     period,
     image,
+    github,
+    demo,
+    password,
 }: SystemCardProps) {
+    const router = useRouter();
+
     return (
-        <Link
-            href={`/systems/${slug}`}
-            className="eng-card group flex flex-col h-full overflow-hidden"
+        <div
+            role="button"
+            tabIndex={0}
+            onClick={() => router.push(`/systems/${slug}`)}
+            onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    router.push(`/systems/${slug}`);
+                }
+            }}
+            className="eng-card group flex flex-col h-full overflow-hidden cursor-pointer"
         >
             {/* Image preview */}
             <div className="relative w-full aspect-video bg-muted overflow-hidden">
@@ -96,8 +113,49 @@ export function SystemCard({
                             </span>
                         )}
                     </div>
+
+                    {/* GitHub / Demo links */}
+                    {(github || demo) && (
+                        <div 
+                            className="flex flex-col gap-2 pt-1" 
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex gap-2 flex-wrap">
+                                {github && (
+                                    <a
+                                        href={github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded border border-border text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
+                                    >
+                                        <Github className="w-3 h-3" />
+                                        GitHub
+                                    </a>
+                                )}
+                                {demo && (
+                                    <a
+                                        href={demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded border border-primary/40 bg-primary/5 text-primary hover:bg-primary/10 transition-colors"
+                                    >
+                                        <ExternalLink className="w-3 h-3" />
+                                        Try it
+                                    </a>
+                                )}
+                            </div>
+                            {password && (
+                                <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground/70">
+                                    <span className="shrink-0">Password:</span>
+                                    <span className="px-2 py-0.5 rounded bg-muted border border-border/60 text-foreground tracking-widest select-all uppercase">
+                                        {password}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
