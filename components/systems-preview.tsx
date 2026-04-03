@@ -1,26 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-const FEATURED_SYSTEMS = [
-    {
-        slug: "airob-2025",
-        title: "AIROB 2025 Robotics",
-        category: "Robotics · Hardware",
-        description:
-            "1st-place winning robot at All Kerala Robotics Competition. Autonomous navigation with custom sensor fusion, motor control, and real-time decision logic.",
-        stack: ["Arduino", "C++", "Ultrasonic", "IR Sensors"],
-    },
-    {
-        slug: "iot-monitor",
-        title: "IoT Environmental Monitor",
-        category: "IoT · Cloud",
-        description:
-            "Distributed environmental sensor network using ESP32 + LoRa for long-range, low-power data collection with cloud dashboard integration.",
-        stack: ["ESP32", "LoRa", "C++", "Cloud IoT"],
-    },
-];
+import { getAllSystems } from "@/lib/systems";
 
 export function SystemsPreview() {
+    const systems = getAllSystems().slice(0, 3);
+
     return (
         <section className="section-divider py-20 px-6">
             <div className="mx-auto max-w-[1200px]">
@@ -41,7 +25,7 @@ export function SystemsPreview() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {FEATURED_SYSTEMS.map((system) => (
+                    {systems.map((system) => (
                         <Link
                             key={system.slug}
                             href={`/systems/${system.slug}`}
@@ -57,16 +41,18 @@ export function SystemsPreview() {
                             <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                                 {system.description}
                             </p>
-                            <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/60">
-                                {system.stack.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="text-xs font-mono px-2 py-0.5 rounded bg-muted text-muted-foreground"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
+                            {system.stack.length > 0 && (
+                                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/60">
+                                    {system.stack.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="text-xs font-mono px-2 py-0.5 rounded bg-muted text-muted-foreground"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                         </Link>
                     ))}
                 </div>

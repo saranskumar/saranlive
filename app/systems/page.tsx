@@ -1,6 +1,7 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { getAllSystems } from "@/lib/systems";
 import { SystemCard } from "@/components/system-card";
+import { HireMe } from "@/components/hire-me";
 
 export const metadata: Metadata = {
     title: "Systems",
@@ -12,7 +13,7 @@ export default function SystemsPage() {
     const systems = getAllSystems();
 
     return (
-        <main className="min-h-screen bg-background text-foreground pt-20 md:pt-28 pb-24 px-4 sm:px-6">
+        <main className="min-h-screen bg-background text-foreground pt-20 md:pt-28 pb-0 px-4 sm:px-6">
             <div className="mx-auto max-w-[1200px]">
                 {/* Header */}
                 <header className="mb-16 space-y-3">
@@ -41,11 +42,15 @@ export default function SystemsPage() {
                                 stack={system.stack}
                                 outcome={system.outcome}
                                 period={system.period}
+                                image={system.image}
                             />
                         ))}
                     </div>
                 )}
             </div>
+
+            {/* Hire Me — below systems grid */}
+            <HireMe />
         </main>
     );
 }

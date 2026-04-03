@@ -13,6 +13,7 @@ export interface SystemItem {
     outcome: string;
     period: string;
     tags: string[];
+    image?: string;
     content: string;
 }
 
@@ -39,6 +40,7 @@ export function getAllSystems(): SystemItem[] {
                 outcome: data.outcome ?? "",
                 period: data.period ?? "",
                 tags: data.tags ?? [],
+                image: data.image ?? null,
                 content: content.trim(),
             };
         });
@@ -63,6 +65,7 @@ export function getSystemBySlug(slug: string): SystemItem | null {
         outcome: data.outcome ?? "",
         period: data.period ?? "",
         tags: data.tags ?? [],
+        image: data.image ?? null,
         content: content.trim(),
     };
 }

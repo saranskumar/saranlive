@@ -6,6 +6,7 @@ import { EngineeringDepth } from "@/components/engineering-depth";
 import { LeadershipExecution } from "@/components/leadership-execution";
 import { ProofLayer } from "@/components/proof-layer";
 import { MindLabCTA } from "@/components/mindlab-cta";
+import { HireMe } from "@/components/hire-me";
 import { ContactCTA } from "@/components/contact-cta";
 
 export default function Home() {
@@ -17,14 +18,15 @@ export default function Home() {
       {/* 2. Systems Preview */}
       <SystemsPreview />
 
-      {/* 3. Engineering Depth */}
+      {/* 2b. Hire Me (below Systems) */}
+      <HireMe />
+
       <EngineeringDepth />
 
       {/* 4. Leadership & Execution */}
       <LeadershipExecution />
 
-      {/* 5. Proof Strip */}
-      <ProofLayer />
+
 
     
 
