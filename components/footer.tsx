@@ -14,10 +14,10 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const FOOTER_LINKS = [
     { name: "Systems", href: "/systems" },
-    { name: "MindLab", href: "/mindlab" },
+    { name: "Experience", href: "/experience" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
-    { name: "Profile", href: "/profile" },
+    { name: "Sitemap", href: "/sitemap.xml" },
 ];
 
 export function Footer() {
@@ -64,10 +64,18 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-6 border-t border-border">
+                <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-muted-foreground">
                         &copy; {new Date().getFullYear()} Saran S Kumar : saranskumar.live
                     </p>
+                    <div className="flex gap-6">
+                        <Link href="/privacy" className="text-[10px] uppercase tracking-widest text-muted-foreground/50 hover:text-foreground transition-colors">
+                            Privacy Policy
+                        </Link>
+                        <Link href="/terms" className="text-[10px] uppercase tracking-widest text-muted-foreground/50 hover:text-foreground transition-colors">
+                            Terms of Service
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>
