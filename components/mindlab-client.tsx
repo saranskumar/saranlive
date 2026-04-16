@@ -62,7 +62,7 @@ export function MindLabClient({ posts, categories, tags }: MindLabClientProps) {
             {filtered.length === 0 ? (
                 <div className="py-16 text-center border border-dashed border-border/60 rounded-xl bg-muted/10">
                     <p className="text-muted-foreground text-sm font-mono">
-                        Will post soon.
+                        Will post soon!.
                     </p>
                 </div>
             ) : (
