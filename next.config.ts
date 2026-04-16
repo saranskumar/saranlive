@@ -9,24 +9,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      // Redirect www -> apex
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.saranskumar.live" }],
-        destination: "https://saranskumar.live/:path*",
-        permanent: true,
-      },
-      // Redirect Vercel preview URL -> apex
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "saranlive.vercel.app" }],
-        destination: "https://saranskumar.live/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

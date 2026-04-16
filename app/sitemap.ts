@@ -3,8 +3,9 @@ import { getAllSystems } from "@/lib/systems";
 
 const BASE = "https://saranskumar.live";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const systems = getAllSystems();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    try {
+        const systems = getAllSystems();
 
     const systemEntries: MetadataRoute.Sitemap = systems.map((s) => ({
         url: `${BASE}/systems/${s.slug}`,
@@ -25,4 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Dynamic system detail pages
         ...systemEntries,
     ];
+    } catch (error) {
+        console.error("Sitemap generation failed:", error);
+        return [{ url: BASE, lastModified: new Date() }];
+    }
 }
