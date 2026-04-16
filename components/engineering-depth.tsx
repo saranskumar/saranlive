@@ -36,7 +36,7 @@ const DEPTH_AREAS = [
         title: "Applied AI & ML",
         skills: [
             "CS (AI & ML) Undergrad - SCTCE",
-            "Neural networks & model training",
+            "Applied machine learning",
             "Autonomous systems research",
             "LLM tooling & prompt engineering",
         ],

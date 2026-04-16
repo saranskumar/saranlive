@@ -37,7 +37,7 @@ const FOCUS_AREAS = [
     {
         title: "AI Exploration",
         description:
-            "CS (AI & ML) coursework, neural networks, prompt engineering, and LLM tooling for real use-cases.",
+            "CS (AI & ML) coursework, applied machine learning, prompt engineering, and LLM tooling for real use-cases.",
     },
     {
         title: "Systems Thinking",
