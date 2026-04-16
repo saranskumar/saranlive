@@ -22,28 +22,41 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Saran S Kumar - Engineer",
-    template: "%s | Saran S Kumar",
-  },
+  title: "Saran S Kumar – AI & ML Engineer | Portfolio",
   description:
-    "CS (AI & ML) student and builder of real-world systems. Embedded systems, full-stack engineering, robotics, and AI exploration. Based in Trivandrum, Kerala.",
+    "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
   keywords: [
     "Saran S Kumar",
-    "embedded systems",
-    "full-stack engineer",
+    "saranskumar",
+    "AI developer",
+    "ML engineer",
+    "cybersecurity",
     "robotics",
-    "IoT",
-    "Next.js",
-    "Kerala engineer",
   ],
+  metadataBase: new URL("https://saranskumar.live"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   authors: [{ name: "Saran S Kumar" }],
+  creator: "Saran S Kumar",
   openGraph: {
-    title: "Saran S Kumar :Engineer",
-    description: "Builder of real-world systems across embedded, full-stack, robotics, and AI.",
-    siteName: "saranskumar.live",
+    title: "Saran S Kumar – AI & ML Engineer | Portfolio",
+    description:
+      "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
+    url: "https://saranskumar.live",
+    siteName: "Saran S Kumar",
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saran S Kumar – AI & ML Engineer | Portfolio",
+    description:
+      "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
   },
 };
 

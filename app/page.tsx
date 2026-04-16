@@ -1,3 +1,4 @@
+import { StructuredData } from "@/components/StructuredData";
 import {
   HeroSection
 } from "@/components/hero";
@@ -12,6 +13,12 @@ import { ContactCTA } from "@/components/contact-cta";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <StructuredData />
+      <h1 className="sr-only">Saran S Kumar</h1>
+      <p className="sr-only">
+        Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast focused on AI, cybersecurity, robotics, and modern web systems.
+      </p>
+
       {/* 1. Hero */}
       <HeroSection />
 
