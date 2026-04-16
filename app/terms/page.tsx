@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Terms of Use",
     description:
-        "Terms of Use for saranskumar.live — outlining the usage, ownership, and licensing of the content and code presented on this portfolio.",
+        "Terms of Use for saranskumar.live - outlining the usage, ownership, and licensing of the content and code presented on this portfolio.",
     alternates: { canonical: "https://saranskumar.live/terms" },
     robots: { index: true, follow: false },
 };

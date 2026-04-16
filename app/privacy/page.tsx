@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Privacy Policy",
     description:
-        "Privacy Policy for saranskumar.live — how contact form data is handled, who has access to it, and what it is used for.",
+        "Privacy Policy for saranskumar.live - how contact form data is handled, who has access to it, and what it is used for.",
     alternates: { canonical: "https://saranskumar.live/privacy" },
     robots: { index: true, follow: false },
 };
@@ -28,7 +28,7 @@ const SECTIONS = [
     {
         title: "What It Is Used For",
         content:
-            "Your information is used purely and exclusively to respond to your message — whether that's a question, a collaboration inquiry, an internship opportunity, or feedback. I do not use your contact details for any unsolicited communication.",
+            "Your information is used purely and exclusively to respond to your message - whether that's a question, a collaboration inquiry, an internship opportunity, or feedback. I do not use your contact details for any unsolicited communication.",
     },
     {
         title: "Data Retention",
