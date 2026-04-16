@@ -60,9 +60,11 @@ export function MindLabClient({ posts, categories, tags }: MindLabClientProps) {
 
             {/* Posts grid */}
             {filtered.length === 0 ? (
-                <p className="text-muted-foreground text-sm">
-                    No posts match the selected filters.
-                </p>
+                <div className="py-16 text-center border border-dashed border-border/60 rounded-xl bg-muted/10">
+                    <p className="text-muted-foreground text-sm font-mono">
+                        Will post soon.
+                    </p>
+                </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {filtered.map((post) => (
