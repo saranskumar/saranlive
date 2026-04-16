@@ -22,41 +22,74 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Saran S Kumar - AI & ML Engineer | Portfolio",
+  title: {
+    default: "Saran S Kumar - AI & ML Engineer | Portfolio",
+    template: "%s | Saran S Kumar",
+  },
   description:
-    "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
+    "Saran S Kumar - Computer Science (AI & ML) student at SCTCE, IEEE volunteer, hackathon winner, and systems builder. Working on AI, robotics, cybersecurity, and scalable web systems.",
   keywords: [
     "Saran S Kumar",
     "saranskumar",
-    "AI developer",
-    "ML engineer",
-    "cybersecurity",
-    "robotics",
+    "saranskumar.live",
+    "AI ML engineer Kerala",
+    "AI developer India",
+    "computer science student SCTCE",
+    "IEEE SCT SB",
+    "robotics hackathon winner",
+    "AIROB 2025",
+    "DECODEX CTF winner",
+    "Next.js developer",
+    "FastAPI Python developer",
+    "embedded systems ESP32",
+    "workflow automation AI",
+    "cybersecurity student India",
+    "full stack developer Trivandrum",
   ],
   metadataBase: new URL("https://saranskumar.live"),
   alternates: {
-    canonical: "/",
+    canonical: "https://saranskumar.live",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
-  authors: [{ name: "Saran S Kumar" }],
+  authors: [{ name: "Saran S Kumar", url: "https://saranskumar.live" }],
   creator: "Saran S Kumar",
+  publisher: "Saran S Kumar",
+  category: "Technology, Engineering, Portfolio",
   openGraph: {
     title: "Saran S Kumar - AI & ML Engineer | Portfolio",
     description:
-      "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
+      "CS (AI & ML) student at SCTCE, IEEE volunteer, hackathon winner, and systems builder. Robotics, cybersecurity, AI, and full-stack engineering.",
     url: "https://saranskumar.live",
     siteName: "Saran S Kumar",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://saranskumar.live/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Saran S Kumar - AI & ML Engineer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@SaranSKumar13",
+    creator: "@SaranSKumar13",
     title: "Saran S Kumar - AI & ML Engineer | Portfolio",
     description:
-      "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
+      "CS (AI & ML) student, IEEE volunteer, hackathon winner. Building AI, robotics, and systems from first principles.",
+    images: ["https://saranskumar.live/og-image.png"],
   },
 };
 

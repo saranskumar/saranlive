@@ -1,41 +1,28 @@
 import { MetadataRoute } from "next";
-import { getAllMindLabPosts } from "@/lib/mindlab";
+import { getAllSystems } from "@/lib/systems";
+
+const BASE = "https://saranskumar.live";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const posts = getAllMindLabPosts();
+    const systems = getAllSystems();
 
-    const mindlabEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-        url: `https://saran.live/mindlab/${post.slug}`,
-        lastModified: new Date(post.date),
+    const systemEntries: MetadataRoute.Sitemap = systems.map((s) => ({
+        url: `${BASE}/systems/${s.slug}`,
+        lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
     }));
 
     return [
-        {
-            url: "https://saran.live",
-            lastModified: new Date(),
-            changeFrequency: "yearly",
-            priority: 1,
-        },
-        {
-            url: "https://saran.live/projects",
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: "https://saran.live/hire-me",
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: "https://saran.live/mindlab",
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.8,
-        },
-        ...mindlabEntries,
+        // Core pages — ordered by importance
+        { url: BASE,                       lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
+        { url: `${BASE}/about`,            lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+        { url: `${BASE}/systems`,          lastModified: new Date(), changeFrequency: "weekly",  priority: 0.9 },
+        { url: `${BASE}/experience`,       lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+        { url: `${BASE}/contact`,          lastModified: new Date(), changeFrequency: "yearly",  priority: 0.7 },
+        { url: `${BASE}/hire-me`,          lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE}/profile`,          lastModified: new Date(), changeFrequency: "yearly",  priority: 0.5 },
+        // Dynamic system detail pages
+        ...systemEntries,
     ];
 }

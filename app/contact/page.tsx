@@ -6,7 +6,8 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata: Metadata = {
     title: "Contact",
     description:
-        "Get in touch with Saran S Kumar - open to internships, collaborations, and interesting builds.",
+        "Reach out to Saran S Kumar - open to internships at product companies, research collaborations, and interesting engineering builds.",
+    alternates: { canonical: "https://saranskumar.live/contact" },
 };
 
 const CONTACT_LINKS = [

@@ -6,7 +6,8 @@ import { Trophy, Users, BookOpen, Cpu } from "lucide-react";
 export const metadata: Metadata = {
     title: "Experience",
     description:
-        "Leadership roles, engineering journey, and community contributions by Saran S Kumar - IEEE Coordinator, hackathon winner, and systems builder.",
+        "Leadership roles, engineering journey, and community contributions by Saran S Kumar - IEEE RAS Vice Chair, AI SIG Coordinator, AIROB winner, DECODEX CTF winner, and systems builder.",
+    alternates: { canonical: "https://saranskumar.live/experience" },
 };
 
 const TYPE_ICONS: Record<string, React.ElementType> = {

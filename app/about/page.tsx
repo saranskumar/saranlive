@@ -7,7 +7,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "About",
     description:
-        "Engineering philosophy, skills, journey, and leadership - Saran S Kumar, builder of real-world systems.",
+        "Saran S Kumar is a CS (AI & ML) student at SCTCE, IEEE volunteer, and competitive hackathon winner. Specializing in embedded systems, robotics, full-stack engineering, and AI applications.",
+    alternates: { canonical: "https://saranskumar.live/about" },
 };
 
 const SKILLS = {

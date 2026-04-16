@@ -6,7 +6,8 @@ import { HireMe } from "@/components/hire-me";
 export const metadata: Metadata = {
     title: "Systems",
     description:
-        "Real-world systems built across embedded hardware, full-stack engineering, robotics, and IoT. Each project is documented with architecture, stack, and outcomes.",
+        "Real-world systems built by Saran S Kumar across embedded hardware, full-stack engineering, robotics, AI, and IoT. Each project documented with architecture, stack, and outcomes.",
+    alternates: { canonical: "https://saranskumar.live/systems" },
 };
 
 export default function SystemsPage() {
