@@ -1,36 +1,31 @@
-﻿const POSITIONS = [
-    {
-        role: "AI SIG Coordinator",
-        org: "IEEE SCT SB",
-        period: "2025–26",
-        impact: [
-            "Coordinating AI/ML study groups and technical sessions",
-            "Mentoring students on applied machine learning projects",
-            "Building a focused AI learning community on campus",
-        ],
-    },
-    {
-        role: "Campus Ambassador - Xtreme 19.0",
-        org: "IEEE Volunteer, IEEE SCT SB",
-        period: "2025",
-        impact: [
-            "Official ambassador for IEEE Xtreme 19.0 global programming contest",
-            "Coordinating participation and logistics for campus teams",
-        ],
-    },
-];
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { getAllPositionsSorted } from "@/lib/content";
 
 export function LeadershipExecution() {
+    const positions = getAllPositionsSorted().slice(0, 3);
+
     return (
         <section className="section-divider py-20 px-6 bg-secondary/20">
             <div className="mx-auto max-w-[1200px]">
-                <p className="mono-label mb-3">leadership &amp; execution</p>
-                <h2 className="text-3xl font-bold tracking-tight mb-12">
-                    Beyond the keyboard
-                </h2>
+                <div className="flex items-end justify-between mb-12">
+                    <div>
+                        <p className="mono-label mb-3">leadership &amp; execution</p>
+                        <h2 className="text-3xl font-bold tracking-tight">
+                            Beyond the keyboard
+                        </h2>
+                    </div>
+                    <Link
+                        href="/experience"
+                        className="hidden sm:inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors"
+                    >
+                        View full journey
+                        <ArrowRight className="w-4 h-4" />
+                    </Link>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {POSITIONS.map((pos) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {positions.map((pos) => (
                         <div key={pos.role} className="eng-card p-6 space-y-4">
                             <div className="flex items-start justify-between gap-4">
                                 <div>
@@ -56,6 +51,16 @@ export function LeadershipExecution() {
                             </ul>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-8 sm:hidden">
+                    <Link
+                        href="/experience"
+                        className="inline-flex items-center gap-2 text-sm text-primary font-medium"
+                    >
+                        View full journey
+                        <ArrowRight className="w-4 h-4" />
+                    </Link>
                 </div>
             </div>
         </section>

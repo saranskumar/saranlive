@@ -1,4 +1,4 @@
-﻿import { Cpu, Globe, Users, Brain } from "lucide-react";
+import { Cpu, Globe, Users, Brain } from "lucide-react";
 
 const DEPTH_AREAS = [
     {
@@ -26,9 +26,9 @@ const DEPTH_AREAS = [
         title: "Leadership & Execution",
         skills: [
             "AI SIG Coordinator, IEEE SCT SB",
+            "Winner - DECODEX CTF 2025",
+            "3rd Place - 11.11 AI Hackathon",
             "Event systems for 500+ attendees",
-            "Cross-functional team leadership",
-            "Hackathon organiser & winner",
         ],
     },
     {

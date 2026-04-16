@@ -26,24 +26,24 @@ const TYPE_COLORS: Record<string, string> = {
 const ACHIEVEMENTS = [
     {
         title: "1st Place - AIROB 2025",
-        sub: "All Kerala Robotics Competition",
+        sub: "AI & Robotics Hackathon",
         description:
-            "Built a fully autonomous obstacle-course robot. Won the fastest completion time at the All Kerala Robotics Competition 2025.",
-        tags: ["Robotics", "Embedded", "C++", "Arduino"],
+            "Designed and built a high-speed autonomous Line Follower Robot (LFR) from scratch in under 18 hours. Achieved the fastest lap with specialized PID control.",
+        tags: ["Robotics", "PID", "C++", "Hardware"],
     },
     {
-        title: "Event System - 500+ Attendees",
-        sub: "IEEE Travancore Hub Meet 2025",
+        title: "Winner - DECODEX CTF",
+        sub: "Cybersecurity Competition",
         description:
-            "Designed and deployed the registration, ticketing, and QR verification system for IEEE THM 2025 with 500+ participants.",
-        tags: ["System Design", "React", "QR Flow"],
+            "Secured the top spot in a high-stakes Capture The Flag (CTF) competition, solving complex challenges across web security, cryptography, and forensics.",
+        tags: ["Cybersecurity", "CTF", "Web Sec", "cryptography"],
     },
     {
-        title: "IoT Internship",
-        sub: "Embedded & Cloud Systems",
+        title: "3rd Place - 11.11 Hackathon",
+        sub: "ASAP11 Workflow Platform",
         description:
-            "Hands-on project work with Arduino, ESP32, Raspberry Pi, LoRa, and cloud IoT integrations during an intensive embedded systems internship.",
-        tags: ["ESP32", "LoRa", "Cloud IoT", "Arduino"],
+            "Built a no-code workflow automation and chat-driven CRM platform. Featured an AI copilot for generating complex conversational flows in real-time.",
+        tags: ["AI", "FastAPI", "Next.js", "Automation"],
     },
 ];
 

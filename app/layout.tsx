@@ -22,7 +22,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Saran S Kumar – AI & ML Engineer | Portfolio",
+  title: "Saran S Kumar - AI & ML Engineer | Portfolio",
   description:
     "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
   keywords: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Saran S Kumar" }],
   creator: "Saran S Kumar",
   openGraph: {
-    title: "Saran S Kumar – AI & ML Engineer | Portfolio",
+    title: "Saran S Kumar - AI & ML Engineer | Portfolio",
     description:
       "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
     url: "https://saranskumar.live",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saran S Kumar – AI & ML Engineer | Portfolio",
+    title: "Saran S Kumar - AI & ML Engineer | Portfolio",
     description:
       "Saran S Kumar is an AI & ML engineer, developer, and technology enthusiast working on AI, cybersecurity, robotics, and scalable systems.",
   },

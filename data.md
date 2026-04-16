@@ -1,4 +1,4 @@
-﻿# Saran S Kumar - Complete Personal & Technical Identity Document
+# Saran S Kumar - Complete Personal & Technical Identity Document
 
 Master reference combining: LinkedIn + GitHub + projects + roles + technical direction + portfolio planning
 
@@ -32,7 +32,7 @@ Hands-on learner building across software, AI, robotics, and systems while growi
 ### Bachelor of Technology - Computer Science (AI & ML)
 
 Sree Chitra Thirunal College of Engineering
-2024 – 2028
+2024 - 2028
 
 Focus:
 
@@ -140,7 +140,7 @@ Secondary:
 
 ### AI SIG Coordinator - IEEE SCT SB
 
-2025 – Present
+2025 - Present
 
 Responsibilities:
 
@@ -152,7 +152,7 @@ Responsibilities:
 
 ### Student Branch Ambassador - IEEEXtreme
 
-2025 – Present
+2025 - Present
 
 Role:
 
@@ -164,7 +164,7 @@ Role:
 
 ### Tech Team - IEDC SCTCE
 
-2025 – Present
+2025 - Present
 
 Contribution:
 
@@ -175,7 +175,7 @@ Contribution:
 
 ### Execom Member - CYBOTS SCTCE
 
-2025 – Present
+2025 - Present
 
 Focus:
 
@@ -196,7 +196,7 @@ Participation in:
 
 ### Troop Leader - Bharat Scouts & Guides
 
-2022 – Present
+2022 - Present
 
 Focus:
 
@@ -208,29 +208,23 @@ Focus:
 
 # ACHIEVEMENTS
 
-### Hackathon Winner
+### 1st Place - AIROB 2025
+AI & Robotics Hackathon
+Learnings: Robotics under pressure, circuit debugging, PID control, teamwork.
 
-AIROB 2025 - AI robotics hackathon
+### Winner - DECODEX CTF
+Cybersecurity Competition
+Learnings: Web security, cryptography, forensics, exploitation.
 
-Learnings:
-
-* robotics under pressure
-* circuit debugging
-* teamwork
-* recovery mindset
+### 3rd Place - 11.11 Hackathon
+ASAP11 Workflow Build
+Learnings: AI conversational logic, state machine execution, real-time sync.
 
 ---
 
 ### Technical Event Contributions
+Handled: Ticketing, registration, and QR verification systems for IEEE Travancore Hub Meet 2025.
 
-Handled:
-
-* ticketing system
-* registration system
-* QR verification system
-
-For:
-IEEE Travancore Hub Meet 2025
 
 ---
 
@@ -484,7 +478,7 @@ Interests beyond tech:
 ### Bachelor of Technology - Computer Science (AI & ML)
 
 Institution: Sree Chitra Thirunal College of Engineering
-Duration: 2024 – 2028
+Duration: 2024 - 2028
 
 ---
 
@@ -504,25 +498,25 @@ Activities:
 
 ### Student Branch Ambassador - IEEEXtreme
 
-Duration: Jun 2025 – Present
+Duration: Jun 2025 - Present
 
 ---
 
 ### AI SIG Coordinator - IEEE SCT SB
 
-Duration: Feb 2025 – Present
+Duration: Feb 2025 - Present
 
 ---
 
 ### Execom Member - CYBOTS SCTCE
 
-Duration: Aug 2025 – Present
+Duration: Aug 2025 - Present
 
 ---
 
 ### Tech Team - IEDC SCTCE
 
-Duration: Jul 2025 – Present
+Duration: Jul 2025 - Present
 
 ---
 
@@ -530,7 +524,7 @@ Duration: Jul 2025 – Present
 
 ### Troop Leader - Bharat Scouts & Guides
 
-Duration: Oct 2022 – Present
+Duration: Oct 2022 - Present
 
 Focus:
 

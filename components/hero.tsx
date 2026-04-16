@@ -30,7 +30,7 @@ export function HeroSection() {
                     built from first principles.
                 </p>
                 <p className="text-sm text-muted-foreground/60 mb-12 font-mono">
-                    CS (AI &amp; ML) at SCT Engineering · IEEE Volunteer · Trivandrum
+                    CS (AI &amp; ML) at SCTCE · IEEE Volunteer · Trivandrum
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-3">

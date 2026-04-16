@@ -1,8 +1,8 @@
-﻿const STATS = [
-    { value: "1st", label: "Place - AIROB 2025", sub: "All Kerala Robotics Competition" },
-    { value: "500+", label: "Attendees Managed", sub: "IEEE THM 2025 Event System" },
-    { value: "4+", label: "Real Systems Built", sub: "Hardware · Cloud · Web" },
-    { value: "2+", label: "Leadership Positions", sub: "IEEE Coordinator & Lead" },
+const STATS = [
+    { value: "1st", label: "Place - AIROB 2025", sub: "AI & Robotics Hackathon" },
+    { value: "WIN", label: "DECODEX CTF", sub: "Cybersecurity Winner" },
+    { value: "3rd", label: "11.11 Hackathon", sub: "ASAP11 AI Platform" },
+    { value: "500+", label: "Attendees Managed", sub: "IEEE THM 2025 System" },
 ];
 
 export function ProofLayer() {

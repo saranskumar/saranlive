@@ -51,7 +51,7 @@ export default function SystemsPage() {
                 )}
             </div>
 
-            {/* Hire Me — below systems grid */}
+            {/* Hire Me - below systems grid */}
             <HireMe />
         </main>
     );
