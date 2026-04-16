@@ -1,77 +1,126 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Terms of Use",
-    description: "Terms of Use for Saran S Kumar's portfolio - outlining the usage and ownership of content and code presented on this site.",
+    description:
+        "Terms of Use for saranskumar.live — outlining the usage, ownership, and licensing of the content and code presented on this portfolio.",
     alternates: { canonical: "https://saranskumar.live/terms" },
+    robots: { index: true, follow: false },
 };
+
+const SECTIONS = [
+    {
+        title: "Nature of the Site",
+        content:
+            "This website is my personal portfolio. It serves as a digital resume and a showcase of systems, projects, and research I have built or contributed to. It is not a commercial platform, and no services are sold directly through this site.",
+    },
+    {
+        title: "Ownership & Copyright",
+        content:
+            "Unless explicitly stated otherwise (such as open-source libraries or specified third-party assets), all content, design, writing, and code architecture summaries presented on this site are my intellectual property. You may not claim them as your own.",
+    },
+    {
+        title: "Code & Projects Usage",
+        content:
+            "The projects documented here (e.g., in the 'Systems' section) are for demonstration. If I have linked to a public GitHub repository, the code within that repository is governed by its respective license (typically MIT). However, the proprietary systems and case studies detailed on this site may not be copied or repurposed to build competing commercial products without explicit permission.",
+    },
+    {
+        title: "No Warranties",
+        content:
+            "I strive to ensure the information and technical documentation on this site are accurate. However, everything is provided 'as is' without any warranties. I am not liable for any issues, damages, or data loss that may arise from using or attempting to replicate the systems and code discussed here.",
+    },
+    {
+        title: "External Links",
+        content:
+            "This site contains links to external websites, GitHub repositories, and social platforms. I am not responsible for the content, privacy policies, or practices of those third-party sites.",
+    },
+    {
+        title: "Changes to Terms",
+        content:
+            "As my work and portfolio evolve, I may update these terms. By continuing to use and browse this site, you agree to be bound by the current version of these Terms of Use.",
+    },
+    {
+        title: "Contact",
+        content: null,
+        isContact: true,
+    },
+];
 
 export default function TermsPage() {
     return (
         <main className="min-h-screen bg-background text-foreground pt-24 md:pt-32 pb-24 px-4 sm:px-6">
-            <div className="mx-auto max-w-3xl">
-                <header className="mb-12">
-                    <p className="mono-label mb-3">legal</p>
-                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Terms of Use</h1>
-                    <p className="text-muted-foreground mt-4">Last Updated: April 2026</p>
+            <div className="mx-auto max-w-2xl">
+
+                {/* Back */}
+                <Link
+                    href="/"
+                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
+                >
+                    ← Back to site
+                </Link>
+
+                {/* Header */}
+                <header className="mb-12 space-y-3">
+                    <p className="mono-label">legal</p>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                        Terms of Use
+                    </h1>
+                    <p className="text-sm text-muted-foreground font-mono">
+                        Effective: April 17, 2026 · saranskumar.live
+                    </p>
                 </header>
 
-                <article className="prose prose-neutral dark:prose-invert max-w-none space-y-8">
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Acceptance of Terms</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            By accessing this website (saranskumar.live), you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
-                        </p>
-                    </section>
+                {/* Summary callout */}
+                <div className="mb-12 px-5 py-4 rounded-lg bg-primary/5 border border-primary/15">
+                    <p className="text-sm leading-relaxed text-foreground">
+                        <span className="font-semibold">Short version:</span>{" "}
+                        This is my personal portfolio. You are welcome to browse, learn from my projects, and explore the public repos I link to. Please don't copy my proprietary work or site design and claim it as your own.
+                    </p>
+                </div>
 
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Ownership of Content</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            All materials on this website, including but not limited to the design, layout, look, appearance, graphics, documentation, and original project code summaries, are the intellectual property of <strong>Saran S Kumar</strong> unless otherwise stated (e.g., third-party logos or open-source libraries).
-                        </p>
-                    </section>
+                {/* Sections */}
+                <div className="space-y-10">
+                    {SECTIONS.map((section, i) =>
+                        section.isContact ? (
+                            <section key={i} className="pt-8 border-t border-border">
+                                <h2 className="text-base font-semibold mb-3">Questions?</h2>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    If you have any questions about these terms or wish to discuss using some of the work shown here, reach out to me at{" "}
+                                    <a
+                                        href="mailto:saranskumarwh@gmail.com"
+                                        className="text-primary hover:underline underline-offset-4"
+                                    >
+                                        saranskumarwh@gmail.com
+                                    </a>
+                                    .
+                                </p>
+                            </section>
+                        ) : (
+                            <section key={i}>
+                                <h2 className="text-base font-semibold mb-2 text-foreground">
+                                    {i + 1}. {section.title}
+                                </h2>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {section.content}
+                                </p>
+                            </section>
+                        )
+                    )}
+                </div>
 
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Usage License</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Permission is granted to temporarily view the materials on this website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
-                        </p>
-                        <ul className="list-disc pl-5 text-muted-foreground space-y-2 mt-4">
-                            <li>Modify or copy the materials for commercial purposes.</li>
-                            <li>Attempt to decompile or reverse engineer any software contained on the website.</li>
-                            <li>Use my original designs or "Systems" documentation to build competing commercial products without explicit permission.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Code & Project Disclaimer</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            The projects and "Systems" showcased on this site are for demonstration purposes. While I strive for technical excellence, I provide these summaries and codes "as is" without warranty of any kind. Use of any information on this site is entirely at your own risk.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Privacy & Data</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Your use of this site is also governed by my 
-                            <a href="/privacy" className="mx-1 text-primary hover:underline">Privacy Policy</a>.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Modifications</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            I may revise these terms of use for my website at any time without notice. By using this website, you are agreeing to be bound by the then-current version of these Terms of Use.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Governing Law</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Any claim relating to saranskumar.live shall be governed by the laws of India, without regard to its conflict of law provisions.
-                        </p>
-                    </section>
-                </article>
+                {/* Footer */}
+                <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                    <p className="text-xs text-muted-foreground font-mono">
+                        © {new Date().getFullYear()} Saran S Kumar
+                    </p>
+                    <Link
+                        href="/privacy"
+                        className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        View Privacy Policy →
+                    </Link>
+                </div>
             </div>
         </main>
     );

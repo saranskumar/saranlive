@@ -1,73 +1,138 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
-    description: "Privacy Policy for Saran S Kumar's portfolio - outlining how contact form data and communications are handled.",
+    description:
+        "Privacy Policy for saranskumar.live — how contact form data is handled, who has access to it, and what it is used for.",
     alternates: { canonical: "https://saranskumar.live/privacy" },
+    robots: { index: true, follow: false },
 };
+
+const SECTIONS = [
+    {
+        title: "Overview",
+        content:
+            "This is a personal portfolio website. It is not a product, a service, or a business. The sole purpose of this site is to showcase my work, share my engineering journey, and allow people to reach out to me directly. Data collection here is minimal by design.",
+    },
+    {
+        title: "What Data Is Collected",
+        content:
+            "The only personal information collected on this site is what you voluntarily provide through the Contact Form. This includes your name, your email address, and the message you write. That's it.",
+    },
+    {
+        title: "How It Is Handled",
+        content:
+            "When you submit the contact form, your message is delivered directly to my personal email inbox via a mail relay. No intermediary platform stores your data. No records are written to a database. I am the only person who reads and responds to these messages.",
+    },
+    {
+        title: "What It Is Used For",
+        content:
+            "Your information is used purely and exclusively to respond to your message — whether that's a question, a collaboration inquiry, an internship opportunity, or feedback. I do not use your contact details for any unsolicited communication.",
+    },
+    {
+        title: "Data Retention",
+        content:
+            "Messages are retained in my personal email inbox for as long as needed for the conversation context. You may request deletion of your message at any time by emailing me directly.",
+    },
+    {
+        title: "Third-Party Sharing",
+        content:
+            "Your personal information is never sold, rented, shared with, or disclosed to any third party under any circumstances. Your message is a private communication between you and me.",
+    },
+    {
+        title: "Cookies & Tracking",
+        content:
+            "This site does not use invasive tracking cookies or fingerprinting. If any analytics are present, they are strictly anonymized performance metrics (e.g., page load times) with no personally identifiable information attached.",
+    },
+    {
+        title: "Your Rights",
+        content:
+            "You have the right to know what data I hold about you, to request correction, or to request deletion. Since all data is limited to your email conversation with me, simply email me and I will act on your request promptly.",
+    },
+    {
+        title: "Contact",
+        content: null,
+        isContact: true,
+    },
+];
 
 export default function PrivacyPage() {
     return (
         <main className="min-h-screen bg-background text-foreground pt-24 md:pt-32 pb-24 px-4 sm:px-6">
-            <div className="mx-auto max-w-3xl">
-                <header className="mb-12">
-                    <p className="mono-label mb-3">legal</p>
-                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Privacy Policy</h1>
-                    <p className="text-muted-foreground mt-4">Last Updated: April 2026</p>
+            <div className="mx-auto max-w-2xl">
+
+                {/* Back */}
+                <Link
+                    href="/"
+                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
+                >
+                    ← Back to site
+                </Link>
+
+                {/* Header */}
+                <header className="mb-12 space-y-3">
+                    <p className="mono-label">legal</p>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                        Privacy Policy
+                    </h1>
+                    <p className="text-sm text-muted-foreground font-mono">
+                        Effective: April 17, 2026 · saranskumar.live
+                    </p>
                 </header>
 
-                <article className="prose prose-neutral dark:prose-invert max-w-none space-y-8">
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Introduction</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            This Privacy Policy outlines how I, Saran S Kumar, handle any information provided through this portfolio website. I value your privacy and aim to be transparent about the minimal data collected here.
-                        </p>
-                    </section>
+                {/* Summary callout */}
+                <div className="mb-12 px-5 py-4 rounded-lg bg-primary/5 border border-primary/15">
+                    <p className="text-sm leading-relaxed text-foreground">
+                        <span className="font-semibold">Short version:</span>{" "}
+                        If you contact me through this site, your message goes directly to my inbox.
+                        I am the only person who sees it. I do not store it in any external system.
+                        I do not share it. I only use it to reply to you.
+                    </p>
+                </div>
 
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Information Collection</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            The only place where personal information is collected on this site is through the <strong>Contact Form</strong>. This includes:
-                        </p>
-                        <ul className="list-disc pl-5 text-muted-foreground space-y-2 mt-4">
-                            <li>Your Name</li>
-                            <li>Your Email Address</li>
-                            <li>The content of your message</li>
-                        </ul>
-                    </section>
+                {/* Sections */}
+                <div className="space-y-10">
+                    {SECTIONS.map((section, i) =>
+                        section.isContact ? (
+                            <section key={i} className="pt-8 border-t border-border">
+                                <h2 className="text-base font-semibold mb-3">Contact About This Policy</h2>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    If you have any questions about how your data is handled, reach out directly at{" "}
+                                    <a
+                                        href="mailto:saranskumarwh@gmail.com"
+                                        className="text-primary hover:underline underline-offset-4"
+                                    >
+                                        saranskumarwh@gmail.com
+                                    </a>
+                                    . I will respond as quickly as I can.
+                                </p>
+                            </section>
+                        ) : (
+                            <section key={i}>
+                                <h2 className="text-base font-semibold mb-2 text-foreground">
+                                    {i + 1}. {section.title}
+                                </h2>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {section.content}
+                                </p>
+                            </section>
+                        )
+                    )}
+                </div>
 
-                    <section className="p-6 rounded-lg bg-primary/5 border border-primary/10">
-                        <h2 className="text-xl font-semibold mb-4 text-primary">Data Handling & Access</h2>
-                        <p className="text-muted-foreground leading-relaxed italic">
-                            "The information you provide is sent directly to my personal email inbox. I do not store this data in any external database, and I am the only person who has access to this data."
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed mt-4">
-                            Your details are used solely for the purpose of responding to your inquiries, discussing potential collaborations, or reviewing internship offers.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Third-Party Sharing</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            I do not sell, trade, or otherwise transfer your personal information to outside parties. This data stays between us.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Cookies & Analytics</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            This site is designed to be as lightweight and privacy-respecting as possible. By default, I do not use invasive tracking cookies. Any analytics used (if applicable) are focused on site performance and anonymized traffic patterns.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold mb-4">Contact</h2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            If you have any questions regarding this privacy policy, you may contact me directly at: 
-                            <a href="mailto:saranskumarwh@gmail.com" className="ml-1 text-primary hover:underline">saranskumarwh@gmail.com</a>
-                        </p>
-                    </section>
-                </article>
+                {/* Footer */}
+                <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                    <p className="text-xs text-muted-foreground font-mono">
+                        © {new Date().getFullYear()} Saran S Kumar
+                    </p>
+                    <Link
+                        href="/terms"
+                        className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        View Terms of Use →
+                    </Link>
+                </div>
             </div>
         </main>
     );
