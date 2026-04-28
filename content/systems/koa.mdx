@@ -1,0 +1,105 @@
+---
+title: "KōA 🐨"
+category: "Product - PWA - Education"
+description: "A modern, high-performance Progressive Web Application (PWA) designed to help students track syllabi, maintain daily study habits, and compete on a global leaderboard. Built with a stunning 'Claymorphism' UI and deep native mobile integration."
+stack: ["React 19", "Vite 7", "Tailwind CSS v3", "Zustand", "TanStack Query v5", "Supabase", "PostgreSQL 15+", "pg_cron", "Deno Edge Functions"]
+outcome: "A high-performance study execution engine enforcing a disciplined 'Execution-First' workflow, with automated nudges and global league competition."
+tags: ["pwa", "supabase", "react", "education", "productivity", "claymorphism", "postgresql"]
+period: "April 2024"
+image: "/systems/koa/appicon.png"
+github: "https://github.com/saranskumar/KoA/"
+demo: "https://koa.saranskumar.live/"
+---
+
+<div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+  <div className="space-y-6">
+    <img src="/systems/koa/dashboard.jpeg" alt="KōA Dashboard" className="rounded-2xl border border-border/40 w-full shadow-2xl shadow-primary/10" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Execution Dashboard</p>
+  </div>
+  <div className="space-y-6">
+    <img src="/systems/koa/syllabus.jpeg" alt="KōA Syllabus Master" className="rounded-2xl border border-border/40 w-full shadow-xl" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Syllabus Master Hub</p>
+  </div>
+</div>
+
+## Executive Summary
+
+KōA (S4 Study Tracker) is a high-performance study execution engine. Moving away from passive tracking, it enforces a disciplined **"Execution-First"** workflow, ensuring students know exactly what to do at every moment of their revision cycle. It serves as an uncompromising, accountability-driven study companion.
+
+## Design System: Claymorphism
+
+The application uses a custom **Claymorphism** design system to provide a tactile, premium, and engaging user experience.
+
+### Visual Tokens
+- **Surface**: Anthracite Dark (`#030712`) with `backdrop-blur-xl` glassmorphism.
+- **Puffy Depth**: Multi-layered shadow system (inset highlights + deep outer drops) to simulate tactile clay physics.
+- **Color Palette**:
+    - <span className="text-cyan-400">●</span> `Cyan`: Focus & Primary UI.
+    - <span className="text-indigo-400">●</span> `Indigo`: Peak Performance blocks.
+    - <span className="text-emerald-400">●</span> `Emerald`: Mastery & Success states.
+    - <span className="text-rose-400">●</span> `Red`: High-Priority Strategic Alerts.
+
+<div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+  <div className="space-y-6">
+    <img src="/systems/koa/ai.jpeg" alt="KōA AI Features" className="rounded-2xl border border-border/40 w-full shadow-xl" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">AI-Driven Study Assistance</p>
+  </div>
+  <div className="space-y-6">
+    <img src="/systems/koa/tracking.jpeg" alt="KōA Tracking & Progress" className="rounded-2xl border border-border/40 w-full shadow-xl" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Daily Execution Tracker</p>
+  </div>
+</div>
+
+## Product Features
+
+### A. Dashboard (The High-Intensity Hub)
+-   **Focus Mode**: Dynamically isolates the "Immediate Task" and the "Output Peak" block.
+-   **Readiness Scoring**: Visual percentage representing global syllabus completion.
+-   **Strategic Warnings**:
+    -   **Countdown**: Days remaining until the next exam.
+    -   **Critical Subjects**: Auto-identifies subjects with "Make or Break" priority.
+
+### B. Daily Mission Checklist
+-   **Atomic Operations**: Support for `Complete` (verify), `Push` (defer to next cycle), and `Skip` (archive).
+-   **Execution State**: Tasks transition from high-contrast Clay cards to low-opacity "Victory" states upon completion.
+
+<div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+  <div className="space-y-6">
+    <img src="/systems/koa/onboarding.jpeg" alt="KōA Onboarding" className="rounded-2xl border border-border/40 w-full shadow-xl" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Step-by-Step Onboarding</p>
+  </div>
+  <div className="space-y-6">
+    <img src="/systems/koa/profile.jpeg" alt="KōA Profile & Metrics" className="rounded-2xl border border-border/40 w-full shadow-xl" />
+    <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Student Profile & Performance</p>
+  </div>
+</div>
+
+## Technical Architecture
+
+### Tech Stack
+-   **Frontend**: React 19, Vite 7, Tailwind CSS v3.
+-   **State Management**: Zustand (Client) + TanStack Query v5 (Server).
+-   **Backend**: Supabase Auth + PostgreSQL 15 + RLS.
+-   **Automation**: `pg_cron` scheduling Deno Edge Functions for serverless Web Push notifications (Morning 7 AM, Evening 8 PM).
+
+## S4 Command Center: Workflow & Logic
+
+The Application provides an instant onboarding experience through two paths:
+1.  **Seeded Ecosystem**: Clones the global S4 template (Maths, AI, OS, DBMS, ADSA, Economics) using PostgreSQL RPCs (`apply_s4_seed`).
+2.  **Total Control**: Allows creating a manual study planner for scholars outside the S4 constraints.
+
+### Core Architecture Decisions
+-   **Single-Template Focus**: Hardcoded UX around the "S4 Exam Prep" to simplify the value loop.
+-   **Module-Grouped Hierarchy**: Restored the Module layer in `SubjectDetailView.jsx` to keep 100+ topic engineering syllabi readable.
+-   **Execution-First Logic**: Shifted from analysis-heavy views to a "Today View" home screen focus.
+
+## API Contracts (Table Definitions)
+
+-   **`plans`**: User workspaces.
+-   **`subjects`**: Associated with a specific plan (Subject → Exam Date → Priority).
+-   **`topics`**: Linked directly to subjects/modules with status (`todo`, `done`, `mastered`).
+-   **`study_plan`**: The primary source for the "Daily Mission" checklist.
+
+---
+
+> *"Start small, finish big."*

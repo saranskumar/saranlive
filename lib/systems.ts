@@ -21,6 +21,7 @@ export interface SystemItem {
 }
 
 const SYSTEM_ORDER = [
+    "koa",
     "asap11",
     "padi-p",
     "neyyar",
